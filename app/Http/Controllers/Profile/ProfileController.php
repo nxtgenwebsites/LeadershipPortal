@@ -7,6 +7,7 @@ use App\Http\Requests\StoreProfileRequest;
 use App\Model\Profile\Profile;
 use App\Repositories\ProfileRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -60,7 +61,7 @@ class ProfileController extends Controller
         if ( $request->hasfile('organization_logo') ) {
             $logo = $request->file('organization_logo');
             $logo_name  = now().'-'.$logo->getClientOriginalName();
-            $image->storeAs('public/images/organizations', $logo_name);
+            $logo->storeAs('public/images/organizations', $logo_name);
             $data['organization_logo']  = $logo_name;
         }
 
@@ -115,5 +116,24 @@ class ProfileController extends Controller
     public function destroy($id)
     {
         //
+    }
+    
+    
+    public function removeImage($id)
+    {
+        $profile = Profile::find($id);
+        Storage::delete( 'public/images/profile/' . $profile->image_main);
+        $profile->image_main = '';
+        $profile->save();
+        return 'success';
+    }
+    
+    public function removeLogo($id)
+    {
+        $profile = Profile::find($id);
+        Storage::delete('/public/images/organizations/'.$profile->organization_logo );
+        $profile->organization_logo = '';
+        $profile->save();
+        return 'success';
     }
 }

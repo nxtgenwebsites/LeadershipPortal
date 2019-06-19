@@ -1,4 +1,5 @@
 @extends('layouts.master')
+
 @section('content')
 <!-- Page header -->
 			<div class="page-header page-header-light">
@@ -34,8 +35,8 @@
 
 
 					<div class="card-body">
-						<div class="card card-table table-responsive shadow-0 mb-0">
-							<table class="table">
+						<div class=" table-responsive shadow-0 mb-0">
+							<table class="table datatable-basic">
 								<thead>
 									<tr>
 										<th>#</th>
@@ -81,9 +82,6 @@
 									@endif
 								</tbody>
 							</table>
-						</div>
-						<div class="float-right mt-2">
-						     {{ $users->links() }}
 						</div>
 							
 					</div>
@@ -175,6 +173,8 @@
 
 @endsection
 @section('scripts')
+<script src="{{ asset('js/plugins/tables/datatables/datatables.min.js') }}"></script>
+<script src="{{ asset('js/demo_pages/datatables_basic.js') }}"></script>
 <script type="text/javascript">
 	$(document).on('click', '.edit', function(){
 		var id = $(this).data('id');

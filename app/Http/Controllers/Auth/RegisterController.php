@@ -83,7 +83,7 @@ class RegisterController extends Controller
         $profile = new Profile();
         $profile->first_name = $user->first_name;
         $profile->last_name = $user->last_name;
-        $profile->email_id1 = $user->email;
+        $profile->email_id = $user->email;
         $profile->save();
 
         return $user;

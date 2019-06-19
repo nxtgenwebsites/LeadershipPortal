@@ -97,4 +97,10 @@ class UserController extends Controller
     {
         return view('auth.passwords.unlock');
     }
+    
+    public function report()
+    {
+     return view('users.report');   
+    }
+    }
 }

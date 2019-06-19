@@ -14,6 +14,7 @@ class ProfileRepository
 		$profile->last_name = $profileData['last_name'];
 		$profile->email_id2 = $profileData['secondary_email'];
 		$profile->city = $profileData['city'];
+		$profile->address = $profileData['address'];
 		$profile->country = $profileData['country'];
 		$profile->zip = $profileData['zip'];
 		$profile->state = $profileData['state'];

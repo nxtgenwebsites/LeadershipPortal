@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Lead360 Dashboard</title>
+	<title>The Leadership Portal</title>
 
 	<!-- Global stylesheets -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
@@ -15,6 +15,7 @@
 	<link href="{{ asset('assets/layout_1/css/components.min.css') }}" rel="stylesheet" type="text/css">
 	<link href="{{ asset('assets/layout_1/css/colors.min.css') }}" rel="stylesheet" type="text/css">
 	<!-- /global stylesheets -->
+	<link rel="shortcut icon" href="{{ asset('favicon.png') }}" type="image/x-icon" />
 
 	<!-- Core JS files -->
 	<script src="{{ asset('js/main/jquery.min.js') }}"></script>
@@ -37,11 +38,16 @@
 
 	<!-- Main navbar -->
 	<div class="navbar navbar-expand-md navbar-dark bg-indigo navbar-static">
-		<div class="navbar-brand">
-			<a href="/" class="d-inline-block" style="font-size:16px; color:white">
-				The Leadership Portal
-			</a>
-		</div>
+		<div class="navbar-brand" style="height:4rem">
+            <a href="{{ route('home') }}" class="d-inline-block">
+                <table>
+                    <tr>
+                        <td><img src="{{ asset('images/header-icon.png') }}" style="height:2.5rem" /></td>
+                        <td style="font-size:16px; color:white;">The Leadership Portal</td>
+                    </tr>
+                </table>
+            </a>
+        </div>
 	</div>
 	<!-- /main navbar -->
 
@@ -69,7 +75,7 @@
 		                @endif
 						<div class="card-body">
 							<div class="text-center mb-3">
-								<img src="{{ asset('images/PORTAL.jpg') }}" alt="" width="250" height="150">
+								<img src="{{ asset('images/Logo.png') }}" alt="Leadership Portal" >
 								<h5 class="mb-0">Unlck Your Account</h5>
 								<span class="d-block text-muted">We'll send you instructions in email</span>
 							</div>

@@ -67,7 +67,7 @@ class LoginController extends Controller
         $user = User::where('email', $request->email)->first();
         if ($user) {
             if ( $user->lock == "Yes" ) {
-                session()->flash('error','Your Account is locked kindly unlock it by filling the form below');
+                session()->flash('error',' Your Account is temporarily locked. You can request to unlock it below');
                 return redirect()->route('unlock');
             }
         }
@@ -84,7 +84,7 @@ class LoginController extends Controller
 
             $request->session()->invalidate();
         
-            session()->flash('error','Your Account is locked kindly unlock it by filling the form below');
+            session()->flash('error',' Your Account is temporarily locked. You can request to unlock it below');
                 return redirect()->route('unlock');
         }
     }

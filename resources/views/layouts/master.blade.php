@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Limitless - Responsive Web Application Kit by Eugene Kopyov</title>
+    <title>The Leadership Portal</title>
 
     <!-- Global stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
@@ -18,14 +18,17 @@
     <link href="{{ asset('assets/layout_1/css/components.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/layout_1/css/colors.min.css') }}" rel="stylesheet" type="text/css">
     <!-- /global stylesheets -->
+    <link rel="shortcut icon" href="{{ asset('favicon.png') }}" type="image/x-icon" />
 
     @yield('styles')
 
     <!-- Core JS files -->
     <script src="{{ asset('js/main/jquery.min.js') }}"></script>
     <script src="{{ asset('js/main/bootstrap.bundle.min.js') }}"></script>
+    
     <script src="{{ asset('js/plugins/loaders/blockui.min.js') }}"></script>
     <script src="{{ asset('js/plugins/ui/ripple.min.js') }}"></script>
+    
     <!-- /core JS files -->
 
     <!-- Theme JS files -->
@@ -48,11 +51,14 @@
 
     <!-- Main navbar -->
     <div class="navbar navbar-expand-md navbar-dark bg-indigo navbar-static">
-        <div class="navbar-brand">
+        <div class="navbar-brand" style="height:4rem">
             <a href="{{ route('home') }}" class="d-inline-block">
-                <a href="/" class="d-inline-block" style="font-size:16px; color:white">
-				The Leadership Dashboard
-			</a>
+                <table>
+                    <tr>
+                        <td><img src="{{ asset('images/header-icon.png') }}" style="height:2.5rem" /></td>
+                        <td style="font-size:22px; color:white;">The Leadership Portal</td>
+                    </tr>
+                </table>
             </a>
         </div>
 
@@ -129,7 +135,7 @@
                             @php $profile = auth()->user()->profile;
                                 
                             @endphp
-                            <span class="font-size-sm text-white text-shadow-dark">@if($profile and !empty($profile->city) and !empty($profile->country) ) {{ $profile->city }}, {{ $profile->country }} @else 
+                            <span class="font-size-sm text-white text-shadow-dark">@if($profile and (!empty($profile->city) or !empty($profile->country) ) ) {{ $profile->city }}, {{ $profile->country }} @else 
                             <a href="{{ route('profile.index') }}">Enter your City</a> @endif</span>
                         </div>
 
@@ -174,7 +180,15 @@
                                 </span>
                             </a>
                         </li>
-                        @if ( auth()->user()->user_type == 'super-admin' )
+                        <li class="nav-item">
+                            <a href="{{ route('report') }}" class="nav-link {{ \Request::is('report') ? 'active':'' }}">
+                                <i class="icon-home4"></i>
+                                <span>
+                                    Report
+                                </span>
+                            </a>
+                        </li>
+                        @if ( auth()->user()->user_type == 'super-admin' OR auth()->user()->user_type == 'admin'  )
                         <li class="nav-item">
                             <a href="{{ route('users.index') }}" class="nav-link  {{ \Request::is('users') ? 'active':'' }}">
                                 <i class="icon-users"></i>

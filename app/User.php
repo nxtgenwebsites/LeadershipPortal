@@ -9,6 +9,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
+    
+    protected $table = 'DSX_Users';
 
     /**
      * The attributes that are mass assignable.
