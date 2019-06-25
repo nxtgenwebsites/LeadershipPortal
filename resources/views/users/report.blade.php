@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('content')
 <div class="page-header page-header-light">
 				<div class="page-header-content header-elements-md-inline">
@@ -13,27 +12,10 @@
 
 			<!-- Content area -->
 			<div class="content">
-				<!-- Framed card body table -->
-				<div class="card">
-					<div class="card-header header-elements-inline">
-						<h5 class="card-title">Self Assessment</h5>
-						<div class="header-elements">
-							<div class="list-icons">
-		                		<a class="list-icons-item" data-action="collapse"></a>
-		                		<a class="list-icons-item" data-action="reload"></a>
-		                	</div>
-	                	</div>
-					</div>
-
-					<div class="card-body">
-						<div class=" table-responsive shadow-0 mb-0">
-							
-						</div>
-							
-					</div>
-				</div>
-				<!-- /framed card body table -->
-
+				@include('users.include.page-1')
+				@include('users.include.page-2')
+				@include('users.include.page-3')
+				@include('users.include.page-4')
 			</div>
 			<!-- /content area -->
 @endsection

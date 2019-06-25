@@ -100,7 +100,10 @@ class UserController extends Controller
     
     public function report()
     {
-     return view('users.report');   
+        $token = auth()->user()->token_id;
+        $token = '94byz7rkbizu5cr';
+        $profile = Profile::select('first_name','last_name','raters_ttl','mgr_ttl','peer_ttl','dir_ttl','oth_ttl')->where('token_id', $token)->first();
+        return view('users.report', compact('profile'));   
     }
-    }
+    
 }

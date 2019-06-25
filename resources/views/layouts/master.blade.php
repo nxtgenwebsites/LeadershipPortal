@@ -181,7 +181,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('report') }}" class="nav-link {{ \Request::is('report') ? 'active':'' }}">
+                            <a href="{{ route('users.report') }}" class="nav-link {{ \Request::is('report') ? 'active':'' }}">
                                 <i class="icon-home4"></i>
                                 <span>
                                     Report
