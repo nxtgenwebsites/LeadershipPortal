@@ -188,6 +188,14 @@
                                 </span>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('self.report') }}" class="nav-link {{ \Request::is('self/report') ? 'active':'' }}">
+                                <i class="icon-home4"></i>
+                                <span>
+                                    Self Report
+                                </span>
+                            </a>
+                        </li>
                         @if ( auth()->user()->user_type == 'super-admin' OR auth()->user()->user_type == 'admin'  )
                         <li class="nav-item">
                             <a href="{{ route('users.index') }}" class="nav-link  {{ \Request::is('users') ? 'active':'' }}">

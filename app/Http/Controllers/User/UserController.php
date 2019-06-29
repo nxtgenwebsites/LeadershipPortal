@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateUserRequest;
 use App\Repositories\UserRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 use App\Model\Profile\Profile;
 use App\User;
 
@@ -103,7 +104,19 @@ class UserController extends Controller
         $token = auth()->user()->token_id;
         $token = '94byz7rkbizu5cr';
         $profile = Profile::select('first_name','last_name','raters_ttl','mgr_ttl','peer_ttl','dir_ttl','oth_ttl')->where('token_id', $token)->first();
-        return view('users.report', compact('profile'));   
+        return view('users.report', compact('profile'));
+    }
+
+    public function selfReport()
+    {
+        $token = auth()->user()->token_id;
+        $token = '94byz7rkbizu5cr';
+        $profile = Profile::select('first_name','last_name','raters_ttl','mgr_ttl','peer_ttl','dir_ttl','oth_ttl')->where('token_id', $token)->first();
+        $selfSummary = DB::table('DSX_SELF_TTL-DATA as self')
+                        ->join('DSX_Report_Options-Data	 as option','option.survey_id','self.survey_id')
+                        ->where('token_id', $token)
+                        ->first();
+        return view('users.self-report', compact('profile'));
     }
     
 }
