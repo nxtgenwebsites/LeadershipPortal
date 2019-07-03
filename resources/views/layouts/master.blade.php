@@ -25,10 +25,10 @@
     <!-- Core JS files -->
     <script src="{{ asset('js/main/jquery.min.js') }}"></script>
     <script src="{{ asset('js/main/bootstrap.bundle.min.js') }}"></script>
-    
+
     <script src="{{ asset('js/plugins/loaders/blockui.min.js') }}"></script>
     <script src="{{ asset('js/plugins/ui/ripple.min.js') }}"></script>
-    
+
     <!-- /core JS files -->
 
     <!-- Theme JS files -->
@@ -80,7 +80,174 @@
                 </li>
             </ul>
 
+            <span class="navbar-text ml-md-3">
+                <span class="badge badge-mark border-orange-300 mr-2"></span>
+                @php
+                    /* This sets the $time variable to the current hour in the 24 hour clock format */
+                    $time = date("H");
+                    /* Set the $timezone variable to become the current timezone */
+                    $timezone = date("e");
+                    /* If the time is less than 1200 hours, show good morning */
+                    if ($time < "12") {
+                        echo "Morning";
+                    } else
+                    /* If the time is grater than or equal to 1200 hours, but less than 1700 hours, so good afternoon */
+                    if ($time >= "12" && $time < "17") {
+                        echo "Afternoon";
+                    } else
+                    /* Should the time be between or equal to 1700 and 1900 hours, show good evening */
+                    if ($time >= "17" && $time < "19") {
+                        echo "Evening";
+                    } else
+                    /* Finally, show good night if the time is greater than or equal to 1900 hours */
+                    if ($time >= "19") {
+                        echo "Night";
+                    }
+                @endphp
+                , {{ auth()->user()->profile->first_name }}!
+            </span>
+
             <ul class="navbar-nav ml-md-auto">
+                <li class="nav-item dropdown">
+                    <a href="#" class="navbar-nav-link dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-make-group mr-2"></i>
+                        Connect
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right dropdown-content wmin-md-350">
+                        <div class="dropdown-content-body p-2">
+                            <div class="row no-gutters">
+                                <div class="col-12 col-sm-4">
+                                    <a href="#" class="d-block text-default text-center ripple-dark rounded p-3">
+                                        <i class="icon-github4 icon-2x"></i>
+                                        <div class="font-size-sm font-weight-semibold text-uppercase mt-2">Github</div>
+                                    </a>
+
+                                    <a href="#" class="d-block text-default text-center ripple-dark rounded p-3">
+                                        <i class="icon-dropbox text-blue-400 icon-2x"></i>
+                                        <div class="font-size-sm font-weight-semibold text-uppercase mt-2">Dropbox</div>
+                                    </a>
+                                </div>
+
+                                <div class="col-12 col-sm-4">
+                                    <a href="#" class="d-block text-default text-center ripple-dark rounded p-3">
+                                        <i class="icon-dribbble3 text-pink-400 icon-2x"></i>
+                                        <div class="font-size-sm font-weight-semibold text-uppercase mt-2">Dribbble</div>
+                                    </a>
+
+                                    <a href="#" class="d-block text-default text-center ripple-dark rounded p-3">
+                                        <i class="icon-google-drive text-success-400 icon-2x"></i>
+                                        <div class="font-size-sm font-weight-semibold text-uppercase mt-2">Drive</div>
+                                    </a>
+                                </div>
+
+                                <div class="col-12 col-sm-4">
+                                    <a href="#" class="d-block text-default text-center ripple-dark rounded p-3">
+                                        <i class="icon-twitter text-info-400 icon-2x"></i>
+                                        <div class="font-size-sm font-weight-semibold text-uppercase mt-2">Twitter</div>
+                                    </a>
+
+                                    <a href="#" class="d-block text-default text-center ripple-dark rounded p-3">
+                                        <i class="icon-youtube text-danger icon-2x"></i>
+                                        <div class="font-size-sm font-weight-semibold text-uppercase mt-2">Youtube</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="navbar-nav-link dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-pulse2 mr-2"></i>
+                        Activity
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right dropdown-content wmin-md-350">
+                        <div class="dropdown-content-header">
+                            <span class="font-size-sm line-height-sm text-uppercase font-weight-semibold">Latest activity</span>
+                            <a href="#" class="text-default"><i class="icon-search4 font-size-base"></i></a>
+                        </div>
+
+                        <div class="dropdown-content-body dropdown-scrollable">
+                            <ul class="media-list">
+                                <li class="media">
+                                    <div class="mr-3">
+                                        <a href="#" class="btn bg-success-400 rounded-round btn-icon"><i class="icon-mention"></i></a>
+                                    </div>
+
+                                    <div class="media-body">
+                                        <a href="#">Taylor Swift</a> mentioned you in a post "Angular JS. Tips and tricks"
+                                        <div class="font-size-sm text-muted mt-1">4 minutes ago</div>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="mr-3">
+                                        <a href="#" class="btn bg-pink-400 rounded-round btn-icon"><i class="icon-paperplane"></i></a>
+                                    </div>
+
+                                    <div class="media-body">
+                                        Special offers have been sent to subscribed users by <a href="#">Donna Gordon</a>
+                                        <div class="font-size-sm text-muted mt-1">36 minutes ago</div>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="mr-3">
+                                        <a href="#" class="btn bg-blue rounded-round btn-icon"><i class="icon-plus3"></i></a>
+                                    </div>
+
+                                    <div class="media-body">
+                                        <a href="#">Chris Arney</a> created a new <span class="font-weight-semibold">Design</span> branch in <span class="font-weight-semibold">Limitless</span> repository
+                                        <div class="font-size-sm text-muted mt-1">2 hours ago</div>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="mr-3">
+                                        <a href="#" class="btn bg-purple-300 rounded-round btn-icon"><i class="icon-truck"></i></a>
+                                    </div>
+
+                                    <div class="media-body">
+                                        Shipping cost to the Netherlands has been reduced, database updated
+                                        <div class="font-size-sm text-muted mt-1">Feb 8, 11:30</div>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="mr-3">
+                                        <a href="#" class="btn bg-warning-400 rounded-round btn-icon"><i class="icon-comment"></i></a>
+                                    </div>
+
+                                    <div class="media-body">
+                                        New review received on <a href="#">Server side integration</a> services
+                                        <div class="font-size-sm text-muted mt-1">Feb 2, 10:20</div>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="mr-3">
+                                        <a href="#" class="btn bg-teal-400 rounded-round btn-icon"><i class="icon-spinner11"></i></a>
+                                    </div>
+
+                                    <div class="media-body">
+                                        <strong>January, 2018</strong> - 1320 new users, 3284 orders, $49,390 revenue
+                                        <div class="font-size-sm text-muted mt-1">Feb 1, 05:46</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown-content-footer bg-light">
+                            <a href="#" class="font-size-sm line-height-sm text-uppercase font-weight-semibold text-grey mr-auto">All activity</a>
+                            <div>
+                                <a href="#" class="text-grey" data-popup="tooltip" title="Clear list"><i class="icon-checkmark3"></i></a>
+                                <a href="#" class="text-grey ml-2" data-popup="tooltip" title="Settings"><i class="icon-gear"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
                 <li class="nav-item">
                     <a href="{{ route('logout') }}" class="navbar-nav-link" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -133,9 +300,9 @@
                             </a>
                             <h6 class="mb-0 text-white text-shadow-dark">{{ auth()->user()->first_name }} {{ auth()->user()->last_name }}</h6>
                             @php $profile = auth()->user()->profile;
-                                
+
                             @endphp
-                            <span class="font-size-sm text-white text-shadow-dark">@if($profile and (!empty($profile->city) or !empty($profile->country) ) ) {{ $profile->city }}, {{ $profile->country }} @else 
+                            <span class="font-size-sm text-white text-shadow-dark">@if($profile and (!empty($profile->city) or !empty($profile->country) ) ) {{ $profile->city }}, {{ $profile->country }} @else
                             <a href="{{ route('profile.index') }}">Enter your City</a> @endif</span>
                         </div>
 
@@ -171,40 +338,82 @@
                 <!-- Main navigation -->
                 <div class="card card-sidebar-mobile">
                     <ul class="nav nav-sidebar" data-nav-type="accordion">
+                        <li class="nav-item nav-item-submenu">
+                            <a href="{{ route('home') }}" class="nav-link {{ \Request::is('home') ? 'active':'' }}"><i class="icon-home4"></i> <span>Home</span></a>
 
-                        <li class="nav-item">
-                            <a href="{{ route('home') }}" class="nav-link {{ \Request::is('home') ? 'active':'' }}">
-                                <i class="icon-home4"></i>
-                                <span>
-                                    Dashboard
-                                </span>
-                            </a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                                <!-- <li class="nav-item"><a href="index.html" class="nav-link active"></a></li> -->
+                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{ route('users.report') }}" class="nav-link {{ \Request::is('report') ? 'active':'' }}">
-                                <i class="icon-home4"></i>
-                                <span>
-                                    Report
-                                </span>
-                            </a>
+                        <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="icon-pencil7"></i> <span>Profile</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                                <!-- <li class="nav-item"><a href="index.html" class="nav-link active"></a></li> -->
+                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{ route('self.report') }}" class="nav-link {{ \Request::is('self/report') ? 'active':'' }}">
-                                <i class="icon-home4"></i>
-                                <span>
-                                    Self Report
-                                </span>
-                            </a>
+                        <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="icon-tree7"></i> <span>Raters</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                                <!-- <li class="nav-item"><a href="index.html" class="nav-link active"></a></li> -->
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="icon-stats-bars2"></i> <span>Results</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                                <li class="nav-item"><a href="{{ route('self.report') }}" class="nav-link">PQ-i Self</a></li>
+                                <li class="nav-item"><a href="{{ route('users.report') }}" class="nav-link">PQ-i 360</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="icon-calendar3"></i> <span>Action Plan</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                                <!-- <li class="nav-item"><a href="index.html" class="nav-link active"></a></li> -->
+                            </ul>
                         </li>
                         @if ( auth()->user()->user_type == 'super-admin' OR auth()->user()->user_type == 'admin'  )
-                        <li class="nav-item">
-                            <a href="{{ route('users.index') }}" class="nav-link  {{ \Request::is('users') ? 'active':'' }}">
-                                <i class="icon-users"></i>
-                                <span>
-                                    Users
-                                </span>
-                            </a>
+                        <!-- Admin -->
+                        <li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">Admin</div> <i class="icon-menu" title="Forms"></i></li>
+
+                        <li class="nav-item nav-item-submenu">
+                            <a href="{{ route('users.index') }}" class="nav-link"><i class="icon-pencil7"></i> <span>Manage Users</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                                <!-- <li class="nav-item"><a href="index.html" class="nav-link active"></a></li> -->
+                            </ul>
                         </li>
+
+                        <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="icon-tree7"></i> <span>Report Options</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                                <!-- <li class="nav-item"><a href="index.html" class="nav-link active"></a></li> -->
+                            </ul>
+                        </li>
+
+                        <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="icon-calendar3"></i> <span>Questions (Self)</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                                <!-- <li class="nav-item"><a href="index.html" class="nav-link active"></a></li> -->
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="icon-calendar3"></i> <span>Quesitons (360)</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                                <!-- <li class="nav-item"><a href="index.html" class="nav-link active"></a></li> -->
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="icon-tree7"></i> <span>Demographics</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                                <!-- <li class="nav-item"><a href="index.html" class="nav-link active"></a></li> -->
+                            </ul>
+                        </li>
+
+                        <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="icon-stats-bars2"></i> <span>Reports</span></a>
+                            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                                <!-- <li class="nav-item"><a href="index.html" class="nav-link active"></a></li> -->
+                            </ul>
+                        </li>
+
                         @endif
                         <!-- /main -->
                     </ul>
