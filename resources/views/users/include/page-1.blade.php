@@ -1,7 +1,5 @@
 <!-- Report Page 1 -->
-	<div class="row">
-		<div class="col-md-8 offset-md-2" style="border:1px solid lightblue; margin-top: 20px;">
-		    <div class="text-center mt-2">
+		 	<div class="text-center mt-2">
 		        <img src="{{ asset('images/report/pqi360/logo-PQI.png') }}" width="600" height="250">
 		    </div>
 		    <h1 class="text-center display-3" style="color:#366092; font-family:calibri">
@@ -42,6 +40,4 @@
 		    <div class="text-center mb-2">
 		        <img src="{{ asset('images/report/PIM-Welcome/PIM-Welcome.png') }}" />
 		    </div>
-		</div>
-	</div>
 <!-- /Report Page 1 -->

@@ -10,7 +10,6 @@
     <!-- Global stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/icons/icomoon/styles.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('css/icons/icomoon/styles.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/layout_1/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/layout_1/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/layout_1/css/bootstrap_limitless.min.css') }}" rel="stylesheet" type="text/css">
@@ -19,6 +18,16 @@
     <link href="{{ asset('assets/layout_1/css/colors.min.css') }}" rel="stylesheet" type="text/css">
     <!-- /global stylesheets -->
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}" type="image/x-icon" />
+    <style>
+        .report-tabs .nav-item a {
+            padding-left:0px !important;
+            padding-right:0px !important;
+            font-size: 12px;
+        }
+        .report-tabs .nav-item .active {
+            background: lightblue;
+        }
+    </style>
 
     @yield('styles')
 
@@ -42,7 +51,7 @@
     <script src="{{ asset('assets/layout_1/js/app.js') }}"></script>
     <script src="{{ asset('js/demo_pages/dashboard.js') }}"></script>
     <!-- /theme JS files -->
-
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
     @yield('scripts')
 
 </head>
@@ -314,12 +323,6 @@
                     <div class="collapse" id="user-nav">
                         <ul class="nav nav-sidebar">
                             <li class="nav-item">
-                                <a href="{{route('profile.index') }}" class="nav-link">
-                                    <i class="icon-user-plus"></i>
-                                    <span>My profile</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
                                 <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     <i class="icon-switch2"></i>
@@ -340,16 +343,10 @@
                     <ul class="nav nav-sidebar" data-nav-type="accordion">
                         <li class="nav-item nav-item-submenu">
                             <a href="{{ route('home') }}" class="nav-link {{ \Request::is('home') ? 'active':'' }}"><i class="icon-home4"></i> <span>Home</span></a>
-
-                            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
-                                <!-- <li class="nav-item"><a href="index.html" class="nav-link active"></a></li> -->
-                            </ul>
                         </li>
                         <li class="nav-item nav-item-submenu">
-                            <a href="#" class="nav-link"><i class="icon-pencil7"></i> <span>Profile</span></a>
-                            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
-                                <!-- <li class="nav-item"><a href="index.html" class="nav-link active"></a></li> -->
-                            </ul>
+                            <a href="{{route('profile.index') }}" class="nav-link"><i class="icon-pencil7"></i> <span>Profile</span></a>
+                            
                         </li>
                         <li class="nav-item nav-item-submenu">
                             <a href="#" class="nav-link"><i class="icon-tree7"></i> <span>Raters</span></a>

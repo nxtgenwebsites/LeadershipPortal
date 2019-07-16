@@ -2,23 +2,20 @@
 <div class="row">
     <div class="col-md-8 offset-md-2">
         <div class="row">
-            <div class="col-8">
-
-            </div>
-            <div class="col-2">
+             <div class="col-3 offset-8">
                 <h4>Name: {{ $profile->first_name }} {{ $profile->last_name }}</h4>
-                <h4>{{ date('M d, Y') }}</h4></h4>
+                <h4>{{ date('M d, Y') }}</h4>
             </div>
             <div class="col-1">
-                <img src="{{ asset('images/report/pqi360/logo-PQI.png') }}" width="150" height="85">
+                <img src="{{ asset('images/report/pqi360/logo-PQI.png') }}" width="130" height="55">
             </div>
             <div class="col-md-12">
-                <h1 class="display-4">Professionalism Intelligence Model</h1>
+                <h1 class="display-4" style="font-size: 2.5rem;font-weight: 400;">Professionalism Intelligence Model</h1>
                 <h3 class="ml-3">This is a summary of the Professionalism Intelligence Model (PIM).</h3>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <h2 class="p-1" style="background:blue; color:white; font-weight:bold; border-radius:10px">COGNITIVE INTELLIGENCE</h2>
                 <p style="font-size:16px"><span style="color:blue; font-weight:bolder;">Focused-Thinking</span>  is the ability to
                     think clearly.</p>
@@ -30,7 +27,7 @@
                 <p style="font-size:16px"><span style="color:blue; font-weight:bolder;">Explanation</span> is the ability to explain
                     your ideas clearly.</p>
             </div>
-            <div class="col-md-4 offset-md-2">
+            <div class="col-md-6">
                 <h2 class="p-1" style="background:red; color:white; font-weight:bold; border-radius:10px">EMOTIONAL INTELLIGENCE</h2>
                 <p style="font-size:16px"><span style="color:red; font-weight:bolder;">Self-Awareness</span>  is the ability to
                     be self aware.</p>
@@ -44,7 +41,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 mt-2"  style="margin-top:3rem;">
+            <div class="col-md-6 mt-2"  style="margin-top:3rem;">
                 <h2 class="p-1" style="background:brown; color:white; font-weight:bold; border-radius:10px">LEADERSHIP INTELLIGENCE</h2>
                 <p style="font-size:16px"><span style="color:brown; font-weight:bolder;">Embodiment</span>  is the ability to lead by
                     example.
@@ -65,7 +62,7 @@
                     reward others achievements.
                 </p>
             </div>
-            <div class="col-md-6 offset-md-1" style="margin-top:2rem;">
+            <div class="col-md-6" style="margin-top:2rem;">
                 <img src="{{ asset('images/report/PIM/PIM.png') }}" />
                 <h2 class="p-1 mt-2" style="background:brown; color:white; font-weight:bold; border-radius:10px">BETTERMENT</h2>
                 <p style="font-size:16px"><span style="color:brown; font-weight:bolder;">Betterment</span>  is a commitment to raise
