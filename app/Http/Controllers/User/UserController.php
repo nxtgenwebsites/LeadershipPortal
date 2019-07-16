@@ -117,7 +117,7 @@ class UserController extends Controller
         $_360_avg = DB::table('DSX_360_AVG-DATA')->where('token_id', $token)->first();
 
         $peersAvg = DB::table('VIEW_RATERS_AVG')->where('token_id',$token)->where('rater_type','peer')->first();
-        dd($peersAvg);
+        
         $managersAvg = DB::table('VIEW_RATERS_AVG')->where('token_id',$token)->where('rater_type','Manager/Supervisor')->first();
         $directsAvg = DB::table('VIEW_RATERS_AVG')->where('token_id',$token)->where('rater_type','Direct Report')->first();
         $othersAvg = DB::table('VIEW_RATERS_AVG')->where('token_id',$token)->where('rater_type','others')->first();
@@ -134,7 +134,6 @@ class UserController extends Controller
         $other_oer = DB::table('DSX_360_TTL-DATA as d')->join('DSX_Raters-Data as r','r.token_id_360','d.token_id_360')
                             ->where('d.token_id', $token)->select('OER1','OER2','OER3','OER4')->where('rater_type', 'others')->get();
 
-        // dd($direct_oer);
         return view('users.report',
             compact('profile','selfSummary','_360','self_avg','_360_avg','peersAvg','managersAvg','directsAvg','othersAvg','peer_oer','manager_oer','direct_oer','other_oer')
         );

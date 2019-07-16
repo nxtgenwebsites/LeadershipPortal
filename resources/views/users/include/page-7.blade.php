@@ -26,7 +26,7 @@
 
 		<div class="row" style="margin-top: 5%; margin-bottom: 10%;">
 			<div class="col-md-12">
-				<div style="background: url('{{ asset('images/report/triangle.png') }}') no-repeat; height: 472px; margin-left: 12%;">
+				<div style="background: url('{{ asset('images/report/triangle.PNG') }}') no-repeat; height: 472px; margin-left: 12%;">
 						<p style="padding-top: 25%;
     font-size: 3rem;
     font-weight: bold;
