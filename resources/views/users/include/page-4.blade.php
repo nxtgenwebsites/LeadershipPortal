@@ -1,7 +1,5 @@
 <!-- Report Page 4 -->
-<div class="row">
-    <div class="col-md-8 offset-md-2">
-		<div class="row">
+	<div class="row">
 	        <div class="col-10">
 	        	<div class="float-right">
 
@@ -17,7 +15,7 @@
 	            <h3 class="ml-3">The bar charts below represent your PQ-i-Self scores. It includes your overall PQ, CQ, EQ, LQ and Betterment scores.</h3>
 	        </div>
 		</div>
-		<div class="row mb-2">
+	<div class="row mb-2">
 	       <div class="col-md-6">
 	           <h3 style="background:#ccc; padding-top:2%; color:green">PROFESSIONALISM QUOTIENT <span class="float-right">{{ $self_pq }}</span></h3>
 	       </div>
@@ -27,7 +25,7 @@
 				</div>
             </div>
 		</div>
-		<div class="row mb-2">
+	<div class="row mb-2">
 	       <div class="col-md-6">
 	           <h3  style="background:#ccc; padding-top:2%; color:blue;">COGNITIVE QUOTIENT<span class="float-right">{{ $self_cq }}</span></h3>
 	            <h5>Focused-Thinking <span class="float-right">{{ $self_focused_thinking }}</span> <span>
@@ -51,7 +49,7 @@
 				</div>
             </div>
 		</div>
-		<div class="row mb-2">
+	<div class="row mb-2">
 	       <div class="col-md-6" style="line-height: 20px;">
 	           <h3  style="background:#ccc; padding-top:2%; color:red;">EMOTIONAL QUOTIENT<span class="float-right">{{ $self_eq }}</span></h3>
 	            <h5>Self Awareness <span class="float-right">{{ $self_self_awareness }}</span> <span>
@@ -75,7 +73,7 @@
 				</div>
             </div>
 		</div>
-		<div class="row mb-2">
+	<div class="row mb-2">
 	       <div class="col-md-6" style="line-height: 20px;">
 	           <h3  style="background:#ccc; padding-top:2%; color:orange;">LEADERSHIP  QUOTIENT<span class="float-right">{{ $self_lq }}</span></h3>
 	            <h5>Embodiment <span class="float-right">{{$self_embodiment}}</span> <span>
@@ -99,7 +97,7 @@
 				</div>
             </div>
 		</div>
-		<div class="row mb-2">
+	<div class="row mb-2">
 	       <div class="col-md-6">
 	           <h3 style="background:#ccc; padding-top:2%; color:brown">BETTERMENT <span class="float-right">{{$self_bt}}</span></h3>
 	       </div>
@@ -109,7 +107,5 @@
 				</div>
             </div>
 		</div>
-	</div>
-</div>
 <!-- /Report page 4 -->
 

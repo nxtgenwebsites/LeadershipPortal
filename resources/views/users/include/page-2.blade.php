@@ -1,7 +1,5 @@
 <!-- Report Page 2 -->
-<div class="row">
-	<div class="col-md-8 offset-md-2">
-		<div class="row">
+	<div class="row">
 		    <div class="col-3 offset-6">
 		        <h4>Name: {{ $profile->first_name }} {{ $profile->last_name }}</h4>
 		        <h4>{{ date('M d, Y') }}</h4>
@@ -10,7 +8,7 @@
 		        <img src="{{ asset('images/report/pqi360/logo-PQI.png') }}" width="130" height="55">
 		    </div>
 		</div>
-		<div class="row">
+	<div class="row">
 		    <div class="col-md-12">
 		        <h1 class="display-4">Welcom to your PQ-i 360&deg;</h1>
 		    </div>
@@ -28,7 +26,7 @@
 		            throughout this report, your will see your results separated into a "Self Summary" vs. a "360 Summary."</p>
 		    </div>
 		    </div>
-		    <div class="row mt-5">
+    <div class="row mt-5">
 		    <div class="col-md-6">
 		        <img src="{{ asset('images/report/Raters/Raters.png') }}" />
 		    </div>
@@ -45,6 +43,4 @@
 		        <img src="{{ asset('images/report/arrow.PNG') }}" />
 		    </div>
 		</div>
-	</div>
-</div>
 <!-- /Report page 2 -->

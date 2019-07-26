@@ -37,9 +37,7 @@
 
 @endphp
 <!-- Report Page 16 -->
-<div class="row">
-    <div class="col-md-8 offset-md-2">
-	    <div class="row">
+    <div class="row">
 	        <div class="col-8">
 
 	        </div>
@@ -55,8 +53,7 @@
 	            <h3 class="ml-3">This is the set of bar graphs for each of the five subscales related to Leadership. It is a graphical representation of your and your raters average responses for that subscale. It shows the response for Self, the overall Average, and the Average response for each of the rater groups.</h3>
 	        </div>
 	    </div>
-
-		<div class="row mb-2">
+	<div class="row mb-2">
 	       <div class="col-md-6">
 	       		<table class="table table-bordered" style="background: grey">
 	       			<tr>
@@ -276,6 +273,4 @@
 
 
 	    </div>
-	</div>
-</div>
 <!-- /Report page 6 -->

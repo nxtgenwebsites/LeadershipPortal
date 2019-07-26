@@ -1,7 +1,5 @@
 <!-- Report Page 3 -->
-<div class="row">
-    <div class="col-md-8 offset-md-2">
-        <div class="row">
+    <div class="row">
              <div class="col-3 offset-8">
                 <h4>Name: {{ $profile->first_name }} {{ $profile->last_name }}</h4>
                 <h4>{{ date('M d, Y') }}</h4>
@@ -14,7 +12,7 @@
                 <h3 class="ml-3">This is a summary of the Professionalism Intelligence Model (PIM).</h3>
             </div>
         </div>
-        <div class="row">
+    <div class="row">
             <div class="col-md-6">
                 <h2 class="p-1" style="background:blue; color:white; font-weight:bold; border-radius:10px">COGNITIVE INTELLIGENCE</h2>
                 <p style="font-size:16px"><span style="color:blue; font-weight:bolder;">Focused-Thinking</span>  is the ability to
@@ -40,7 +38,7 @@
                     when necessary.</p>
             </div>
         </div>
-        <div class="row">
+    <div class="row">
             <div class="col-md-6 mt-2"  style="margin-top:3rem;">
                 <h2 class="p-1" style="background:brown; color:white; font-weight:bold; border-radius:10px">LEADERSHIP INTELLIGENCE</h2>
                 <p style="font-size:16px"><span style="color:brown; font-weight:bolder;">Embodiment</span>  is the ability to lead by
@@ -73,6 +71,4 @@
                 </p>
             </div>
         </div>
-    </div>
-</div>
 <!-- /Report page 3 -->

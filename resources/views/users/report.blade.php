@@ -124,34 +124,73 @@
 		<!-- Report Page 1 -->
 		<div class="card">
 			<div class="card-header">
-				<ul class="nav nav-tabs report-tabs">
+				<ul class="nav nav-tabs nav-tabs-solid rounded border-0">
 					<li class="nav-item"><a href="#basic-tab1" class="nav-link active" data-toggle="tab">Intro</a></li>
 					<li class="nav-item"><a href="#basic-tab2" class="nav-link" data-toggle="tab">Welcome</a></li>
 					<li class="nav-item"><a href="#basic-tab3" class="nav-link" data-toggle="tab">PIM</a></li>
-					<li class="nav-item"><a href="#basic-tab4" class="nav-link" data-toggle="tab">4.Self</a></li>
-					<li class="nav-item"><a href="#basic-tab5" class="nav-link" data-toggle="tab">5.360</a></li>
-					<li class="nav-item"><a href="#basic-tab6" class="nav-link" data-toggle="tab">6.Self</a></li>
-					<li class="nav-item"><a href="#basic-tab7" class="nav-link" data-toggle="tab">7.360</a></li>
-					<li class="nav-item"><a href="#basic-tab8" class="nav-link" data-toggle="tab">8.Self</a></li>
-					<li class="nav-item"><a href="#basic-tab9" class="nav-link" data-toggle="tab">9.360</a></li>
-					<li class="nav-item"><a href="#basic-tab10" class="nav-link" data-toggle="tab">Selfvs360</a></li>
-					<li class="nav-item"><a href="#basic-tab11" class="nav-link" data-toggle="tab">Selfvs360</a></li>
-					<li class="nav-item"><a href="#basic-tab12" class="nav-link" data-toggle="tab">Selfvs360</a></li>
-					<li class="nav-item"><a href="#basic-tab13" class="nav-link" data-toggle="tab">Selfvs360</a></li>
-					<li class="nav-item"><a href="#basic-tab14" class="nav-link" data-toggle="tab">Selfvs360</a></li>
-					<li class="nav-item"><a href="#basic-tab15" class="nav-link" data-toggle="tab">Selfvs360</a></li>
-					<li class="nav-item"><a href="#basic-tab16" class="nav-link" data-toggle="tab">Selfvs360</a></li>
-					<li class="nav-item"><a href="#basic-tab17" class="nav-link" data-toggle="tab">Selfvs360</a></li>
-					<li class="nav-item"><a href="#basic-tab18" class="nav-link" data-toggle="tab">%Ranking</a></li>
-					<li class="nav-item"><a href="#basic-tab19" class="nav-link" data-toggle="tab">Open-Ended</a></li>
-					<li class="nav-item"><a href="#basic-tab20" class="nav-link" data-toggle="tab">Open-Ended</a></li>
-					<li class="nav-item"><a href="#basic-tab21" class="nav-link" data-toggle="tab">Action Plan</a></li>
+					<li class="nav-item dropdown">
+    					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Summary</a>
+    					<div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; transform: translate3d(-64px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
+    						<a href="#basic-tab4" class="dropdown-item" data-toggle="tab">4.Self</a>
+    						<a href="#basic-tab5" class="dropdown-item" data-toggle="tab">5.360</a>
+    					</div>
+    				</li>
+    				<li class="nav-item dropdown">
+    					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Triangle</a>
+    					<div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; transform: translate3d(-64px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
+    						<a href="#basic-tab6" class="dropdown-item" data-toggle="tab">6.Self</a>
+    						<a href="#basic-tab7" class="dropdown-item" data-toggle="tab">7.360</a>
+    					</div>
+    				</li>
+    				<li class="nav-item dropdown">
+    					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Spider</a>
+    					<div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; transform: translate3d(-64px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
+    						<a href="#basic-tab8" class="dropdown-item" data-toggle="tab">8.Self</a>
+    						<a href="#basic-tab9" class="dropdown-item" data-toggle="tab">9.360</a>
+    						<a href="#basic-tab10" class="dropdown-item" data-toggle="tab">10. Selfvs360</a>
+    					</div>
+    				</li>
+    				<li class="nav-item dropdown">
+    					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Spider</a>
+    					<div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; transform: translate3d(-64px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
+    						<a href="#basic-tab11" class="dropdown-item" data-toggle="tab">11. Quadrant Gap Analysis</a>
+    						<a href="#basic-tab12" class="dropdown-item" data-toggle="tab">12. Linear Gap Analysis</a>
+    						<a href="#basic-tab13" class="dropdown-item" data-toggle="tab">13. Linear Gap Analysis [Subscale]</a>
+    					</div>
+    				</li>
+    				<li class="nav-item dropdown">
+    					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Bar</a>
+    					<div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; transform: translate3d(-64px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
+    						<a href="#basic-tab14" class="dropdown-item" data-toggle="tab">14. Cognitive</a>
+    						<a href="#basic-tab15" class="dropdown-item" data-toggle="tab">15. Emotional</a>
+    						<a href="#basic-tab16" class="dropdown-item" data-toggle="tab">16. Leadership</a>
+    						<a href="#basic-tab17" class="dropdown-item" data-toggle="tab">17. Betterment & Balance</a>
+    					</div>
+    				</li>
+    				<li class="nav-item dropdown">
+    					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">% Rank</a>
+    					<div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; transform: translate3d(-64px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
+    						<a href="#basic-tab18" class="dropdown-item" data-toggle="tab">18. PQ-i Percentile Ranking</a>
+    					</div>
+    				</li>
+    				<li class="nav-item dropdown">
+    					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Open Ended</a>
+    					<div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; transform: translate3d(-64px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
+    						<a href="#basic-tab19" class="dropdown-item" data-toggle="tab">19.  Open-Ended Responses [Page 1]</a>
+    						<a href="#basic-tab20" class="dropdown-item" data-toggle="tab">20.  Open-Ended Responses [Page 2]</a>
+    					</div>
+    				</li>
+    				
+    				<li class="nav-item dropdown">
+    					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action Plan</a>
+    					<div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; transform: translate3d(-64px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
+    						<a href="#basic-tab21" class="dropdown-item" data-toggle="tab">21.  PQ-i Action Plan </a>
+    					</div>
+    				</li>
 				</ul>
 			</div>
 				<div class="card-body">
 				<div class="tab-content">
-					<h2 class="text-center" style="color:blue">PQ-i 360 &deg Feedback Report</h2>
-					<p class="text-center" style="color:red">A Report on the result of your self assessment as well as the assigned 360 raters based on your professionalism and betterment in a clinical setting</p>
 					<div class="tab-pane active" id="basic-tab1">
 						@include('users.include.page-1')
 					</div>
@@ -211,6 +250,9 @@
 					</div>
 					<div class="tab-pane" id="basic-tab20">
 						@include('users.include.page-20')
+					</div>
+					<div class="tab-pane" id="basic-tab21">
+						@include('users.include.page-21')
 					</div>
 				</div>
 			</div>

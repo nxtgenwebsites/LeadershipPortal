@@ -1,6 +1,4 @@
 <!-- Report Page 18 -->
-<div class="row">
-	<div class="col-md-8 offset-md-2">
 	    <div class="row">
 	        <div class="col-8">
 
@@ -13,8 +11,7 @@
 	            <img src="{{ asset('images/report/pqi360/logo-PQI.png') }}" width="130" height="55">
 	        </div>
 	        <div class="col-md-12">
-	            <h1 class="display-5">PQ-i Percentile Ranking
-</h1>
+	            <h1 class="display-5">PQ-i Percentile Ranking</h1>
 
 	            <h5>The leaders and raters who make up the PQ-i database include a mix of males and females
 at all levels, from all types of organizations, and from all over the world. This page
@@ -36,5 +33,4 @@ lower.</h5>
 
 	     </div>
    </div>
-</div>
-</div>
+<!-- \Report Page 18 -->

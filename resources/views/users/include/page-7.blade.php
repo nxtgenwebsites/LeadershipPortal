@@ -1,7 +1,5 @@
-<!-- Report Page 5 -->
-<div class="row">
-	<div class="col-md-8 offset-md-2">
-	    <div class="row">
+<!-- Report Page 7 -->
+    <div class="row">
 	        <div class="col-8">
 
 	        </div>
@@ -24,7 +22,7 @@
 	        </div>
 	    </div>
 
-		<div class="row" style="margin-top: 5%; margin-bottom: 10%;">
+	<div class="row" style="margin-top: 5%; margin-bottom: 10%;">
 			<div class="col-md-12">
 				<div style="background: url('{{ asset('images/report/triangle.PNG') }}') no-repeat; height: 472px; margin-left: 12%;">
 						<p style="padding-top: 25%;
@@ -54,12 +52,11 @@
 			</div>
 		</div>
 
-	   	<div class="row mt-2" style="margin-bottom: 5%;">
+   	<div class="row mt-2" style="margin-bottom: 5%;">
 			<div class="col-md-12" style="background: #ccc; border-radius: 20px;">
 				<h2 class="text-center">Summary of your PQ-i Domain & Betterment Result</h2>
 				<p class="text-center">Your assesment Score indicates areas where there is potential for improvement</p>
 			</div>
 	   	</div>
-	</div>
-</div>
-<!-- /Report page 5 -->
+
+<!-- /Report page 7 -->

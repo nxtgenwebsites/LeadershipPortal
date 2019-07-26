@@ -1,6 +1,5 @@
 <!-- Report Page 12 -->
-<div class="row">
-    <div class="col-md-8 offset-md-2">
+
 	   <div class="row">
 	        <div class="col-8">
 
@@ -185,5 +184,4 @@ emotions, and motivate others to move forward when necessary.
 inspire others, surpass normal expectations, empower & recognize others.
 </p>
 	        </div>
-</div>
-</div>
+<!-- End Report Page 12 -->

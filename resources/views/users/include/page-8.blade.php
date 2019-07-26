@@ -1,8 +1,5 @@
-
-<!-- Report Page 6 -->
-<div class="row">
-	<div class="col-md-8 offset-md-2">
-	    <div class="row">
+<!-- Report Page 8 -->
+    <div class="row">
 	        <div class="col-8">
 
 	        </div>
@@ -35,16 +32,14 @@
 	        	</ul>
 	        </div>
 	    </div>
-
-		<div class="row" style="margin-top: -20%;">
+	<div class="row" style="margin-top: -20%;">
 			<div class="chart-container">
 				<div class="chart" style="height: 500px; width: 8in" id="pie_rose_labels">
 
 				</div>
 			</div>
 		</div>
-
-	   	<div class="row mt-2" style="margin-top: -20%; margin-bottom: 5%;">
+   	<div class="row mt-2" style="margin-top: -20%; margin-bottom: 5%;">
 			<div class="col-md-6">
 				<h2 style="color:brown" class="display-2">LQ</h2>
 			</div>
@@ -55,6 +50,4 @@
 				</div>
 			</div>
 	   	</div>
-	</div>
-</div>
-<!-- /Report page 6 -->
+<!-- /Report page 8 -->

@@ -8,10 +8,8 @@
 		color:white;
 	}
 </style>
-<!-- Report Page 6 -->
-<div class="row">
-    <div class="col-md-8 offset-md-2">
-	    <div class="row">
+<!-- Report Page 21 -->
+    <div class="row">
 	        <div class="col-8">
 
 	        </div>
@@ -48,9 +46,7 @@
 	            </p>
 	        </div>
 	    </div>
-
-
-	   	<div class="row mt-2">
+   	<div class="row mt-2">
 	   		<div class="col-md-12">
 		   		<table class="table table-bordered blue-backgroud">
 					<thead>
@@ -96,6 +92,4 @@
 				</p>
 	   		</div>
 	   	</div>
-	</div>
-</div>
-<!-- /Report page 6 -->
+<!-- /Report page 21 -->

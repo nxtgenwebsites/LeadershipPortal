@@ -6,9 +6,7 @@
 	$BTTotalAvg  = ($BTmanagerAvg+$BTpeerAvg+$BTdirectAvg+$BTotherAvg)/4;
 @endphp
 <!-- Report Page 17 -->
-<div class="row">
-    <div class="col-md-8 offset-md-2">
-	    <div class="row">
+    <div class="row">
 	        <div class="col-8">
 
 	        </div>
@@ -25,7 +23,7 @@
 	        </div>
 	    </div>
 
-		<div class="row mb-2">
+	<div class="row mb-2">
 	       <div class="col-md-6">
 	       		<table class="table table-bordered" style="background: grey">
 	       			<tr>
@@ -64,14 +62,14 @@
            </div>
 	    </div>
 
-	    <div class="row mb-2">
+    <div class="row mb-2">
 	    	<div class="col-md-12">
 	            <h1 class="display-5">PQ-i Balance</h1>
 	            <h3 class="ml-3">Your PQ-i balance is based on the relationship between your Cognitive Quotient (CQ), Emotional Quotient (EQ) and your Leadership Quotient (LQ). The lower the score in this bar graph the better balanced you are within each of these quotients. The higher the score in this bar graph the more imbalanced you are within each of these quotients. A lower overall PQ-i along with a low score in this graph demonstrates a comfort level within each of the quotients and the participant does not rely on one specific skill to achieve their overall professionalism. In contrast a higher PQ-i and a high score on this graph demonstrates more of an erratic use of these quotients and the participant may rely more on one specific skill to achieve their overall professionalism. Even though the goal of the PQ-I is to improve your overall score it is also the goal of the PQ-I to help you improve your balance between each of the quotients.</h3>
 	        </div>
 	    </div>
 
-	    <div class="row mb-2">
+    <div class="row mb-2">
 	       <div class="col-md-6">
 	       		<table class="table table-bordered" style="background: grey">
 	       			<tr>
@@ -109,6 +107,4 @@
 				</div>
            </div>
 	    </div>
-	</div>
-</div>
-<!-- /Report page 6 -->
+<!-- /Report page 17 -->

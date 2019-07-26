@@ -1,6 +1,5 @@
 <!-- Report Page 10 -->
-<div class="row">
-	<div class="col-md-8 offset-md-2">
+
 	    <div class="row">
 	        <div class="col-8">
 
@@ -45,6 +44,5 @@
 				</div>
 			</div>
 	   	</div>
-	</div>
-</div>
-<!-- /Report page 6 -->
+	
+<!-- /Report page 10 -->

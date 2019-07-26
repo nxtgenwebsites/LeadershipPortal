@@ -141,14 +141,17 @@ class UserController extends Controller
 
     public function selfReport()
     {
+        
         $token = auth()->user()->token_id;
         $token = '94byz7rkbizu5cr';
         $profile = Profile::select('first_name','last_name','raters_ttl','mgr_ttl','peer_ttl','dir_ttl','oth_ttl')->where('token_id', $token)->first();
-        $selfSummary = DB::table('dsx_self_ttl-data as self')
-                        ->join('dsx_report_options-data as option','option.survey_id','self.survey_id')
+        $selfSummary = DB::table('DSX_SELF_TTL-DATA as self')
+                        ->join('DSX_Report_Options-Data as option','option.survey_id','self.survey_id')
                         ->where('token_id', $token)
                         ->first();
-        return view('users.self-report', compact('profile','selfSummary'));
+                        $self_avg = DB::table('DSX_SELF_AVG-DATA')->where('token_id', $token)->first();
+                        
+        return view('users.self-report', compact('profile','selfSummary','self_avg'));
     }
 
 }

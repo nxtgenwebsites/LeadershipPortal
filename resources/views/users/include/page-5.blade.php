@@ -1,7 +1,5 @@
 <!-- Report Page 5 -->
-<div class="row">
-    <div class="col-md-8 offset-md-2">
-		<div class="row">
+	<div class="row">
 		        <div class="col-3 offset-7">
 		            <h5>Name: {{ $profile->first_name }} {{ $profile->last_name }}</h5>
 		            <h5>{{ date('M d, Y') }}</h5>
@@ -10,13 +8,13 @@
 		            <img src="{{ asset('images/report/pqi360/logo-PQI.png') }}" width="130" height="55">
 		        </div>
 		</div>
-		<div class="row">
+	<div class="row">
 	        <div class="col-md-12">
 	            <h1 class=" ml-2 display-5">PQ-i-360 Summary</h1>
 	            <h3 class="ml-3">The bar charts below represent your PQ-i-360 scores. It includes your overall PQ, CQ, EQ, LQ and Betterment scores.</h3>
 	        </div>
 		</div>
-		<div class="row mb-2">
+	<div class="row mb-2">
 		       <div class="col-md-6">
 		           <h3 style="background:#ccc; padding-top:2%; color:green">PROFESSIONALISM QUOTIENT <span class="float-right">{{ round($_360_pq) }}</span></h3>
 		       </div>
@@ -26,7 +24,7 @@
 					</div>
 	            </div>
 		</div>
-		<div class="row mb-2">
+	<div class="row mb-2">
 		       <div class="col-md-6">
 		           <h3  style="background:#ccc; padding-top:2%; color:blue;">COGNITIVE QUOTIENT<span class="float-right">{{ round($_360_cq) }}</span></h3>
 		            <h5>Focused-Thinking <span class="float-right">{{ round($_360_focused_thinking) }}</span> <span>
@@ -50,7 +48,7 @@
 					</div>
 	            </div>
 		</div>
-		<div class="row mb-2">
+	<div class="row mb-2">
 		       <div class="col-md-6" style="line-height: 20px;">
 		           <h3  style="background:#ccc; padding-top:2%; color:red;">EMOTIONAL QUOTIENT<span class="float-right">{{ round($_360_eq) }}</span></h3>
 		            <h5>Self Awareness <span class="float-right">{{ round($_360_self_awareness) }}</span> <span>
@@ -74,7 +72,7 @@
 					</div>
 	            </div>
 		</div>
-		<div class="row mb-2">
+	<div class="row mb-2">
 		       <div class="col-md-6" style="line-height: 20px;">
 		           <h3  style="background:#ccc; padding-top:2%; color:orange;">LEADERSHIP  QUOTIENT<span class="float-right">{{ round($_360_lq) }}</span></h3>
 		            <h5>Embodiment <span class="float-right">{{ round($_360_embodiment) }}</span> <span>
@@ -98,7 +96,7 @@
 					</div>
 	            </div>
 		</div>
-		<div class="row mb-2">
+	<div class="row mb-2">
 		       <div class="col-md-6">
 		           <h3 style="background:#ccc; padding-top:2%; color:brown">BETTERMENT <span class="float-right">{{ round($_360_bt) }}</span></h3>
 		       </div>
@@ -108,6 +106,4 @@
 					</div>
 	            </div>
 		</div>
-	</div>
-</div>
 <!-- /Report page 5 -->
