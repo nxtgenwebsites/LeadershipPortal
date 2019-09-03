@@ -26,8 +26,8 @@ Route::resource('profile', 'Profile\ProfileController')->middleware('verified');
 Route::get('profile/remove/image/{id}', 'Profile\ProfileController@removeImage');
 Route::get('profile/remove/logo/{id}', 'Profile\ProfileController@removeLogo');
 
-Route::get('users/report', 'User\UserController@report')->name('users.report');
-Route::get('users/self/report', 'User\UserController@selfReport')->name('self.report');
+Route::get('users/report/{token}', 'User\UserController@report')->name('users.report');
+Route::get('users/report/self/{token}', 'User\UserController@selfReport')->name('self.report');
 Route::resource('users', 'User\UserController')->middleware('verified');
 
 Route::get('/account/unlock', 'User\UserController@unlock')->name('unlock');

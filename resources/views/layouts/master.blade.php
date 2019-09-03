@@ -15,41 +15,25 @@
     <link href="{{ asset('assets/layout_1/css/layout.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/layout_1/css/components.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/layout_1/css/colors.min.css') }}" rel="stylesheet" type="text/css">
+    
     <link href="{{ asset('css/icons/material/styles.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/icons/fontawesome/styles.min.css') }}" rel="stylesheet" type="text/css">
     <!-- /global stylesheets -->
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}" type="image/x-icon" />
-    <style>
-        .nav-link.active {
-            color: #fff;
-            background-color: #3F51B5 !important;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('assets/layout_1/css/tui-chart.min.css') }}">
+    <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet" type="text/css">
 
     @yield('styles')
-
-    <!-- Core JS files -->
-    <script src="{{ asset('js/main/jquery.min.js') }}"></script>
-    <script src="{{ asset('js/main/bootstrap.bundle.min.js') }}"></script>
-
-    <script src="{{ asset('js/plugins/loaders/blockui.min.js') }}"></script>
-    <script src="{{ asset('js/plugins/ui/ripple.min.js') }}"></script>
-
-    <!-- /core JS files -->
-
-    <!-- Theme JS files -->
-    <script src="{{ asset('js/plugins/visualization/d3/d3.min.js') }}"></script>
-    <script src="{{ asset('js/plugins/visualization/d3/d3_tooltip.js') }}"></script>
-    <script src="{{ asset('js/plugins/forms/styling/switchery.min.js') }}"></script>
-    <script src="{{ asset('js/plugins/forms/selects/bootstrap_multiselect.js') }}"></script>
-    <script src="{{ asset('js/plugins/ui/moment/moment.min.js') }}"></script>
-    <script src="{{ asset('js/plugins/pickers/daterangepicker.js') }}"></script>
-
-    <script src="{{ asset('assets/layout_1/js/app.js') }}"></script>
-    <script src="{{ asset('js/demo_pages/dashboard.js') }}"></script>
-    <!-- /theme JS files -->
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
-    @yield('scripts')
+    <style>
+        .raters-icon {
+            margin-right: 16px !important;
+        }
+        
+        .report-tabs .nav-link.active{
+            color:#fff !important;
+            background-color:#3f51b5 !important;
+        }
+    </style>
 
 </head>
 
@@ -136,7 +120,7 @@
                                 </div>
 
                                 <div class="col-12 col-sm-4">
-                                    <a href="https://www.facebook.com/leaderpeaks" class="d-block text-default text-center ripple-dark rounded p-3">
+                                    <a href="https://www.facebook.com/leaderportal360" class="d-block text-default text-center ripple-dark rounded p-3">
                                         <i class="icon-facebook text-blue-400 icon-2x"></i>
                                         <div class="font-size-sm font-weight-semibold text-uppercase mt-2">Facebook</div>
                                     </a>
@@ -148,7 +132,7 @@
                                 </div>
 
                                 <div class="col-12 col-sm-4">
-                                    <a href="https://www.linkedin.com/company/leaderpeaks" class="d-block text-default text-center ripple-dark rounded p-3">
+                                    <a href="https://www.linkedin.com/company/leaderportal" class="d-block text-default text-center ripple-dark rounded p-3">
                                         <i class="icon-linkedin text-blue icon-2x"></i>
                                         <div class="font-size-sm font-weight-semibold text-uppercase mt-2">Linkedin</div>
                                     </a>
@@ -332,19 +316,16 @@
                             <a href="{{ route('home') }}" class="nav-link {{ \Request::is('home') ? 'active':'' }}"><i class="mi-dashboard"></i> <span>Dashboard</span></a>
                         </li>
                         <li class="nav-item nav-item-submenu">
-                            <a href="{{route('profile.index') }}" class="nav-link"><i class="icon-profile"></i> <span>Profile</span></a>
+                            <a href="{{route('profile.index') }}" class="nav-link {{ \Request::is('profile') ? 'active':'' }}"><i class="icon-profile"></i> <span>Profile</span></a>
                         </li>
                         <li class="nav-item nav-item-submenu">
-                            <a href="#" class="nav-link"><i class="fa fa-users"></i> <span>Raters</span></a>
-                            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
-                                <!-- <li class="nav-item"><a href="index.html" class="nav-link active"></a></li> -->
-                            </ul>
+                            <a href="#" class="nav-link"><i class="fa fa-users raters-icon"></i> <span>Raters</span></a>
                         </li>
                         <li class="nav-item nav-item-submenu">
                             <a href="#" class="nav-link"><i class="icon-stats-bars"></i> <span>Results</span></a>
                             <ul class="nav nav-group-sub" data-submenu-title="Layouts">
-                                <li class="nav-item"><a href="{{ route('self.report') }}" class="nav-link">PQ-i Self</a></li>
-                                <li class="nav-item"><a href="{{ route('users.report') }}" class="nav-link">PQ-i 360</a></li>
+                                <li class="nav-item"><a href="{{ url('users/report/self/'.auth()->user()->token_id ) }}" class="nav-link">PQ-i Self</a></li>
+                                <li class="nav-item"><a href="{{ url('users/report/'.auth()->user()->token_id ) }}" class="nav-link">PQ-i 360</a></li>
                             </ul>
                         </li>
                         <li class="nav-item nav-item-submenu">
@@ -396,6 +377,37 @@
 
     </div>
     <!-- /page content -->
+    
+    
+    
+    <!-- Core JS files -->
+    <script src="{{ asset('js/main/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/main/bootstrap.bundle.min.js') }}"></script>
+
+    <script src="{{ asset('js/plugins/loaders/blockui.min.js') }}"></script>
+    <script src="{{ asset('js/plugins/ui/ripple.min.js') }}"></script>
+
+    <!-- /core JS files -->
+
+    <!-- Theme JS files -->
+    <script src="{{ asset('js/plugins/visualization/d3/d3.min.js') }}"></script>
+    <script src="{{ asset('js/plugins/visualization/d3/d3_tooltip.js') }}"></script>
+    <script src="{{ asset('js/plugins/forms/styling/switchery.min.js') }}"></script>
+    <script src="{{ asset('js/plugins/forms/selects/bootstrap_multiselect.js') }}"></script>
+    <script src="{{ asset('js/plugins/ui/moment/moment.min.js') }}"></script>
+    <script src="{{ asset('js/plugins/pickers/daterangepicker.js') }}"></script>
+
+    <script src="{{ asset('assets/layout_1/js/app.js') }}"></script>
+    <script src="{{ asset('js/demo_pages/dashboard.js') }}"></script>
+    <!-- /theme JS files -->
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="{{ asset('assets/layout_1/js/tui-chart-all.js') }}"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-polar.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-radar.min.js"></script>
+    @yield('scripts')
 
 </body>
 

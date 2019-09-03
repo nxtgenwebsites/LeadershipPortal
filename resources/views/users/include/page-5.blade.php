@@ -1,109 +1,90 @@
 <!-- Report Page 5 -->
-	<div class="row">
-		        <div class="col-3 offset-7">
-		            <h5>Name: {{ $profile->first_name }} {{ $profile->last_name }}</h5>
-		            <h5>{{ date('M d, Y') }}</h5>
-		        </div>
-		        <div class="col-1">
-		            <img src="{{ asset('images/report/pqi360/logo-PQI.png') }}" width="130" height="55">
-		        </div>
-		</div>
-	<div class="row">
-	        <div class="col-md-12">
-	            <h1 class=" ml-2 display-5">PQ-i-360 Summary</h1>
-	            <h3 class="ml-3">The bar charts below represent your PQ-i-360 scores. It includes your overall PQ, CQ, EQ, LQ and Betterment scores.</h3>
-	        </div>
-		</div>
-	<div class="row mb-2">
-		       <div class="col-md-6">
-		           <h3 style="background:#ccc; padding-top:2%; color:green">PROFESSIONALISM QUOTIENT <span class="float-right">{{ round($_360_pq) }}</span></h3>
-		       </div>
-	            <div class="col-md-6">
-	                <div class="chart-container">
-					<div class="chart" style="height:50px; width: 4in;" id="pq360"></div>
-					</div>
-	            </div>
-		</div>
-	<div class="row mb-2">
-		       <div class="col-md-6">
-		           <h3  style="background:#ccc; padding-top:2%; color:blue;">COGNITIVE QUOTIENT<span class="float-right">{{ round($_360_cq) }}</span></h3>
-		            <h5>Focused-Thinking <span class="float-right">{{ round($_360_focused_thinking) }}</span> <span>
-		               <p style="font-size:12px;">clear thinking; clear thoughts; ability to concentrate</p></span></h5>
-					<h5>Problem-Solving <span class="float-right">{{ round($_360_problem_solving) }}</span> <span>
-		               <p style="font-size:12px;">ability to find solutions to problems; orderly thinking </p></span></h5>
-				 	<h5>Critical-Thinking <span class="float-right">{{  round($_360_critical_thinking) }}</span> <span>
-		               <p style="font-size:12px;">disciplined in conceptualizing, applying, analyzing information</p></span></h5>
-		            <h5>Decision-Making <span class="float-right">{{ round($_360_decision_making) }}</span> <span>
-		               <p style="font-size:12px;">selection of the best course of action among several possibilities</p></span></h5>
-		            <h5>Explanation  <span class="float-right">{{ round($_360_explanation) }}</span>
-		            	<span>
-		            		<p style="font-size:12px;">statements which clarify the cause, context, and consequence of facts</p>
-						</span>
-					</h5>
+@include('users/include/report-header')
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="p4-heading">PQ-i-360 Summary</h1>
+        <h3 class="p4-heading-desc ml-3">The bar charts below represent your PQ-i-360 scores. It includes your overall PQ, CQ, EQ, LQ and Betterment scores.</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+       <h3 class="p4-pq">PROFESSIONALISM QUOTIENT <span class="float-right">{{ round($_360_pq) }}</span></h3>
+    </div>
+    <div class="col-md-8">
+        <div class="chart" id="professional-quotient-360"></div>
+    </div>
+</div>
 
-		       </div>
-	            <div class="col-md-6">
-	                <div class="chart-container">
-					<div class="chart" style="height:300px; width: 4in;" id="cq360"></div>
-					</div>
-	            </div>
-		</div>
-	<div class="row mb-2">
-		       <div class="col-md-6" style="line-height: 20px;">
-		           <h3  style="background:#ccc; padding-top:2%; color:red;">EMOTIONAL QUOTIENT<span class="float-right">{{ round($_360_eq) }}</span></h3>
-		            <h5>Self Awareness <span class="float-right">{{ round($_360_self_awareness) }}</span> <span>
-		               <p style="font-size:12px;">capacity for introspection; ability to recognize oneself as an individual</p></span></h5>
-					<h5>Self-Regulation <span class="float-right">{{ round($_360_self_regulation) }}</span> <span>
-		               <p style="font-size:12px;">capacity to control impulses; ability to stop/start doing something </p></span></h5>
-				 	<h5>Interpersonal Relationships <span class="float-right">{{ round($_360_interpersonal_relationships) }}</span> <span>
-		               <p style="font-size:12px;">a strong, deep, or close association with people; enduring relationships</p></span></h5>
-		            <h5>Empathy <span class="float-right">{{ round($_360_empathy) }}</span> <span>
-		               <p style="font-size:12px;">the capacity to share or recognize emotions experienced by another</p></span></h5>
-		            <h5>Motivation  <span class="float-right">{{ round($_360_motivation) }}</span>
-		            	<span>
-		            		<p style="font-size:12px;">prompts a person to act or behave in a certain manner when necessary</p>
-						</span>
-					</h5>
 
-		       </div>
-	            <div class="col-md-6">
-	                <div class="chart-container">
-					<div class="chart" style="height:300px; width: 4in;" id="eq360"></div>
-					</div>
-	            </div>
-		</div>
-	<div class="row mb-2">
-		       <div class="col-md-6" style="line-height: 20px;">
-		           <h3  style="background:#ccc; padding-top:2%; color:orange;">LEADERSHIP  QUOTIENT<span class="float-right">{{ round($_360_lq) }}</span></h3>
-		            <h5>Embodiment <span class="float-right">{{ round($_360_embodiment) }}</span> <span>
-		               <p style="font-size:12px;">the perfect representative or example of a quality, idea, etc.</p></span></h5>
-					<h5>Inspiration <span class="float-right">{{ round($_360_inspiration) }}</span> <span>
-		               <p style="font-size:12px;">something that makes someone want to do something </p></span></h5>
-				 	<h5>Excellence <span class="float-right">{{ round($_360_excellence) }}</span> <span>
-		               <p style="font-size:12px;">a talent/quality which is unusually good; surpasses ordinary standards</p></span></h5>
-		            <h5>Empowerment <span class="float-right">{{ round($_360_empowerment) }}</span> <span>
-		               <p style="font-size:12px;">to give power/authority to someone; authorize</p></span></h5>
-		            <h5>Recognition  <span class="float-right">{{ round($_360_recognition) }}</span>
-		            	<span>
-		            		<p style="font-size:12px;">acknowledgment of someone as valid; entitled to consideration 1</p>
-						</span>
-					</h5>
 
-		       </div>
-	            <div class="col-md-6">
-	                <div class="chart-container">
-					<div class="chart" style="height:300px; width: 4in;" id="lq360"></div>
-					</div>
-	            </div>
-		</div>
-	<div class="row mb-2">
-		       <div class="col-md-6">
-		           <h3 style="background:#ccc; padding-top:2%; color:brown">BETTERMENT <span class="float-right">{{ round($_360_bt) }}</span></h3>
-		       </div>
-	            <div class="col-md-6">
-	                <div class="chart-container">
-					<div class="chart" style="height:50px; width: 4in;" id="bt360"></div>
-					</div>
-	            </div>
-		</div>
+<div class="row">
+    <div class="col-md-4">
+        <h3 class="p4-cq">CONGNITIVE QUOTIENT <span class="float-right">{{ round($_360_cq) }}</span></h3>
+        <h5 class="p4-cq-desc">Focused-Thinking <span class="p4-desc-span">{{ round($_360_focused_thinking) }}</span> <span>
+           <p>clear thinking; clear thoughts; ability to concentrate</p></span></h5>
+    	<h5 class="p4-cq-desc">Problem-Solving <span class="p4-desc-span">{{ round($_360_problem_solving) }}</span> <span>
+           <p>ability to find solutions to problems; orderly thinking </p></span></h5>
+     	<h5 class="p4-cq-desc">Critical-Thinking <span class="p4-desc-span">{{  round($_360_critical_thinking) }}</span> <span>
+           <p>disciplined in conceptualizing, applying, analyzing information</p></span></h5>
+        <h5 class="p4-cq-desc">Decision-Making <span class="p4-desc-span">{{ round($_360_decision_making) }}</span> <span>
+           <p>selection of the best course of action among several possibilities</p></span></h5>
+        <h5 class="p4-cq-desc">Explanation  <span class="p4-desc-span">{{ round($_360_explanation) }}</span>
+        	<span>
+        		<p>statements which clarify the cause, context, and consequence of facts</p>
+    		</span>
+    	</h5>
+    </div>
+    
+    <div class="col-md-8">
+        <div class="chart" id="congnitive-quotient-360"></div>
+    </div>
+</div>
+
+<div class="row mb-2">
+	    <div class="col-md-4">
+            	<h3 class="p4-eq">EMOTIONAL QUOTIENT<span class="float-right">{{ round($_360_eq) }}</span></h3>
+       
+            	<h5 class="p4-cq-desc">Self Awareness <span class="p4-desc-span">{{ round($_360_self_awareness) }}</span> <span>
+	               <p style="font-size:12px;">capacity for introspection; ability to recognize oneself as an individual</p></span></h5>
+		<h5 class="p4-cq-desc">Self-Regulation <span class="p4-desc-span">{{ round($_360_self_regulation) }}</span> <span>
+	               <p>capacity to control impulses; ability to stop/start doing something </p></span></h5>
+		<h5 class="p4-cq-desc">Interpersonal Relationships <span class="p4-desc-span">{{ round($_360_interpersonal_relationships) }}</span> <span><p>a strong, deep, or close association with people; enduring relationships</p></span></h5>
+            <h5 class="p4-cq-desc">Empathy <span class="p4-desc-span">{{ round($_360_empathy) }}</span> <span><p>the capacity to share or recognize emotions experienced by another</p></span></h5>
+            <h5 class="p4-cq-desc">Motivation  <span class="p4-desc-span">{{ round($_360_motivation) }}</span><span><p>prompts a person to act or behave in a certain manner when necessary</p></span</h5>
+        </div>
+        <div class="col-md-8">
+            <div class="chart" id="emotional-quotient-360"></div>
+        </div>
+</div>
+
+<div class="row mb-2">
+        <div class="col-md-4">
+           <h3 class="p4-lq">LEADERSHIP  QUOTIENT<span class="float-right">{{ round($_360_lq) }}</span></h3>
+            <h5 class="p4-cq-desc">Embodiment <span class="p4-desc-span">{{ round($_360_embodiment) }}</span> <span>
+               <p>the perfect representative or example of a quality, idea, etc.</p></span></h5>
+    		<h5 class="p4-cq-desc">Inspiration <span class="p4-desc-span">{{ round($_360_inspiration) }}</span> <span>
+               <p>something that makes someone want to do something </p></span></h5>
+    	 	<h5 class="p4-cq-desc">Excellence <span class="p4-desc-span">{{ round($_360_excellence) }}</span> <span>
+               <p>a talent/quality which is unusually good; surpasses ordinary standards</p></span></h5>
+            <h5 class="p4-cq-desc">Empowerment <span class="p4-desc-span">{{ round($_360_empowerment) }}</span> <span>
+               <p>to give power/authority to someone; authorize</p></span></h5>
+            <h5 class="p4-cq-desc">Recognition  <span class="p4-desc-span">{{ round($_360_recognition) }}</span>
+            	<span>
+            		<p>acknowledgment of someone as valid; entitled to consideration 1</p>
+    			</span>
+    		</h5>
+        </div>
+        <div class="col-md-8">
+            <div class="chart" id="leadership-quotient-360"></div>
+        </div>
+</div>
+
+<div class="row mb-2">
+        <div class="col-md-4">
+           <h3 class="p4-pq">BETTERMENT <span class="float-right">{{ round($_360_bt) }}</span></h3>
+        </div>
+        <div class="col-md-8">
+            <div class="chart" id="betterment-quotient-360"></div>
+        </div>
+</div>
 <!-- /Report page 5 -->

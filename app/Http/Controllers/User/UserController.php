@@ -102,7 +102,7 @@ class UserController extends Controller
     public function report()
     {
         $token = auth()->user()->token_id;
-        $token = '94byz7rkbizu5cr';
+        $token = request()->token;
         $profile = Profile::select('first_name','last_name','raters_ttl','mgr_ttl','peer_ttl','dir_ttl','oth_ttl')->where('token_id', $token)->first();
         $selfSummary = DB::table('DSX_SELF_TTL-DATA as self')
                         ->join('DSX_Report_Options-Data as option','option.survey_id','self.survey_id')
