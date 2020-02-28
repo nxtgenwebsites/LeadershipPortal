@@ -18,23 +18,14 @@
     
     <link href="{{ asset('css/icons/material/styles.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/icons/fontawesome/styles.min.css') }}" rel="stylesheet" type="text/css">
+      <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css?hcode=c11e6e3cfefb406e8ce8d99fa8368d33" rel="stylesheet" type="text/css">
+  <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css?hcode=c11e6e3cfefb406e8ce8d99fa8368d33" rel="stylesheet" type="text/css">
     <!-- /global stylesheets -->
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}" type="image/x-icon" />
     <link rel="stylesheet" href="{{ asset('assets/layout_1/css/tui-chart.min.css') }}">
     <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet" type="text/css">
 
     @yield('styles')
-    <style>
-        .raters-icon {
-            margin-right: 16px !important;
-        }
-        
-        .report-tabs .nav-link.active{
-            color:#fff !important;
-            background-color:#3f51b5 !important;
-        }
-    </style>
-
 </head>
 
 <body>
@@ -407,6 +398,8 @@
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-polar.min.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-radar.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-bundle.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.0/js/anychart-base.min.js"></script>
     @yield('scripts')
 
 </body>

@@ -103,119 +103,167 @@
 	$_360_avg_empowerment = round($_360_avg->empowerment*2,1);
 	$_360_avg_recognition = round($_360_avg->recognition*2,1);
 	
+	/* Page-11 */
+	$self_quad_cq = round($self_quad->CQ,1);
+	$self_quad_ft = round($self_quad->focused_thinking,1);
+	$self_quad_ps = round($self_quad->problem_solving,1);
+	$self_quad_ct = round($self_quad->critical_thinking,1);
+	$self_quad_dm = round($self_quad->decision_making,1);
+	$self_quad_ex = round($self_quad->explanation,1);
+	$self_quad_eq = round($self_quad->EQ,1);
+	$self_quad_sa = round($self_quad->self_awareness,1);
+	$self_quad_sr = round($self_quad->self_regulation,1);
+	$self_quad_ir = round($self_quad->interpersonal_relationships,1);
+	$self_quad_em = round($self_quad->empathy,1);
+	$self_quad_mo = round($self_quad->motivation,1);
+	$self_quad_lq = round($self_quad->LQ,1);
+	$self_quad_emb = round($self_quad->embodiment,1);
+	$self_quad_ins = round($self_quad->inspiration,1);
+	$self_quad_exc = round($self_quad->excellence,1);
+	$self_quad_emp = round($self_quad->empowerment,1);
+	$self_quad_re = round($self_quad->recognition,1);
+	$self_quad_bt = round($self_quad->BT,1);
+	
+	$quad_360_cq = $quad_360->CQ;
+	$quad_360_ft = $quad_360->FT;
+	$quad_360_ps = $quad_360->PS;
+	$quad_360_ct = $quad_360->CT;
+	$quad_360_dm = $quad_360->DM;
+	$quad_360_ex = $quad_360->EX;
+	$quad_360_eq = $quad_360->EQ;
+	$quad_360_sa = $quad_360->SA;
+	$quad_360_sr = $quad_360->SR;
+	$quad_360_ir = $quad_360->IR;
+	$quad_360_em = $quad_360->EM;
+	$quad_360_mo = $quad_360->MO;
+	$quad_360_lq = $quad_360->LQ;
+	$quad_360_emb = $quad_360->EMB;
+	$quad_360_ins = $quad_360->INS;
+	$quad_360_exc = $quad_360->EXC;
+	$quad_360_emp = $quad_360->EMP;
+	$quad_360_re = $quad_360->RE;
+	$quad_360_bt = $quad_360->BT;
+	
 	/* Page-14 */
 	
-	$cqmanagerAvg = isset($managersAvg->CQ) ? $managersAvg->CQ : 0;
-	$cqpeerAvg    = isset($peersAvg->CQ) ? $peersAvg->CQ : 0;
-	$cqdirectAvg  = isset($directsAvg->CQ) ? $directsAvg->CQ : 3;
-	$cqotherAvg  = isset($othersAvg->CQ) ? $othersAvg->CQ : 0;
-	$CQTotalAvg  = ($cqmanagerAvg+$cqpeerAvg+$cqdirectAvg+$cqotherAvg)/4;
+	$cqmanagerAvg = isset($managersAvg->CQ) ? round($managersAvg->CQ,1) : 0;
+	$cqpeerAvg    = isset($peersAvg->CQ) ? round($peersAvg->CQ,1) : 0;
+	$cqdirectAvg  = isset($directsAvg->CQ) ? round($directsAvg->CQ,1) : 3;
+	$cqotherAvg  = isset($othersAvg->CQ) ? round($othersAvg->CQ,1) : 0;
+	$CQTotalAvg  = round( ($cqmanagerAvg+$cqpeerAvg+$cqdirectAvg+$cqotherAvg)/4,1 );
 
-	$FTmanagerAvg = isset($managersAvg->FT) ? $managersAvg->FT : 0;
-	$FTpeerAvg    = isset($peersAvg->FT) ? $peersAvg->FT : 0;
-	$FTdirectAvg  = isset($directsAvg->FT) ? $directsAvg->FT : 3;
-	$FTotherAvg  = isset($othersAvg->FT) ? $othersAvg->FT : 0;
-	$FTTotalAvg  = ($FTmanagerAvg+$FTpeerAvg+$FTdirectAvg+$FTotherAvg)/4;
+	$FTmanagerAvg = isset($managersAvg->FT) ? round($managersAvg->FT,1) : 0;
+	$FTpeerAvg    = isset($peersAvg->FT) ? round($peersAvg->FT,1) : 0;
+	$FTdirectAvg  = isset($directsAvg->FT) ? round($directsAvg->FT,1) : 3;
+	$FTotherAvg  = isset($othersAvg->FT) ? round($othersAvg->FT,1) : 0;
+	$FTTotalAvg  = round( ($FTmanagerAvg+$FTpeerAvg+$FTdirectAvg+$FTotherAvg)/4,1 );
 
-	$PSmanagerAvg = isset($managersAvg->PS) ? $managersAvg->PS : 0;
-	$PSpeerAvg    = isset($peersAvg->PS) ? $peersAvg->PS : 0;
-	$PSdirectAvg  = isset($directsAvg->PS) ? $directsAvg->PS : 3;
-	$PSotherAvg  = isset($othersAvg->PS) ? $othersAvg->PS : 0;
-	$PSTotalAvg  = ($PSmanagerAvg+$PSpeerAvg+$PSdirectAvg+$PSotherAvg)/4;
+	$PSmanagerAvg = isset($managersAvg->PS) ? round($managersAvg->PS,1) : 0;
+	$PSpeerAvg    = isset($peersAvg->PS) ? round($peersAvg->PS,1) : 0;
+	$PSdirectAvg  = isset($directsAvg->PS) ? round($directsAvg->PS,1) : 3;
+	$PSotherAvg  = isset($othersAvg->PS) ? round($othersAvg->PS,1) : 0;
+	$PSTotalAvg  = round( ($PSmanagerAvg+$PSpeerAvg+$PSdirectAvg+$PSotherAvg)/4,1);
 
-	$CTmanagerAvg = isset($managersAvg->CT) ? $managersAvg->CT : 0;
-	$CTpeerAvg    = isset($peersAvg->CT) ? $peersAvg->CT : 0;
-	$CTdirectAvg  = isset($directsAvg->CT) ? $directsAvg->CT : 3;
-	$CTotherAvg  = isset($othersAvg->CT) ? $othersAvg->CT : 0;
-	$CTTotalAvg  = ($CTmanagerAvg+$CTpeerAvg+$CTdirectAvg+$CTotherAvg)/4;
+	$CTmanagerAvg = isset($managersAvg->CT) ? round($managersAvg->CT,1) : 0;
+	$CTpeerAvg    = isset($peersAvg->CT) ? round($peersAvg->CT,1) : 0;
+	$CTdirectAvg  = isset($directsAvg->CT) ? round($directsAvg->CT,1) : 3;
+	$CTotherAvg  = isset($othersAvg->CT) ? round($othersAvg->CT,1) : 0;
+	$CTTotalAvg  = round( ($CTmanagerAvg+$CTpeerAvg+$CTdirectAvg+$CTotherAvg)/4,1);
 
-	$DMmanagerAvg = isset($managersAvg->DM) ? $managersAvg->DM : 0;
-	$DMpeerAvg    = isset($peersAvg->DM) ? $peersAvg->DM : 0;
-	$DMdirectAvg  = isset($directsAvg->DM) ? $directsAvg->DM : 3;
-	$DMotherAvg  = isset($othersAvg->DM) ? $othersAvg->DM : 0;
-	$DMTotalAvg  = ($DMmanagerAvg+$DMpeerAvg+$DMdirectAvg+$DMotherAvg)/4;
+	$DMmanagerAvg = isset($managersAvg->DM) ? round($managersAvg->DM,1) : 0;
+	$DMpeerAvg    = isset($peersAvg->DM) ? round($peersAvg->DM,1) : 0;
+	$DMdirectAvg  = isset($directsAvg->DM) ? round($directsAvg->DM,1) : 3;
+	$DMotherAvg  = isset($othersAvg->DM) ? round($othersAvg->DM,1) : 0;
+	$DMTotalAvg  = round( ($DMmanagerAvg+$DMpeerAvg+$DMdirectAvg+$DMotherAvg)/4,1);
 
-	$EXmanagerAvg = isset($managersAvg->EX) ? $managersAvg->EX : 0;
-	$EXpeerAvg    = isset($peersAvg->EX) ? $peersAvg->EX : 0;
-	$EXdirectAvg  = isset($directsAvg->EX) ? $directsAvg->EX : 3;
-	$EXotherAvg  = isset($othersAvg->EX) ? $othersAvg->EX : 0;
-	$EXTotalAvg  = ($EXmanagerAvg+$EXpeerAvg+$EXdirectAvg+$EXotherAvg)/4;
+	$EXmanagerAvg = isset($managersAvg->EX) ? round( $managersAvg->EX,1) : 0;
+	$EXpeerAvg    = isset($peersAvg->EX) ? round( $peersAvg->EX,1) : 0;
+	$EXdirectAvg  = isset($directsAvg->EX) ? round( $directsAvg->EX,1) : 3;
+	$EXotherAvg  = isset($othersAvg->EX) ? round( $othersAvg->EX,1) : 0;
+	$EXTotalAvg  = round( ($EXmanagerAvg+$EXpeerAvg+$EXdirectAvg+$EXotherAvg)/4,1);
 	
 	/* Page-15 */
 	
-	$EQmanagerAvg = isset($managersAvg->EQ) ? $managersAvg->EQ : 0;
-	$EQpeerAvg    = isset($peersAvg->EQ) ? $peersAvg->EQ : 0;
-	$EQdirectAvg  = isset($directsAvg->EQ) ? $directsAvg->EQ : 3;
-	$EQotherAvg  = isset($othersAvg->EQ) ? $othersAvg->EQ : 0;
-	$EQTotalAvg  = ($EQmanagerAvg+$EQpeerAvg+$EQdirectAvg+$EQotherAvg)/4;
+	$EQmanagerAvg = isset($managersAvg->EQ) ? round($managersAvg->EQ,1) : 0;
+	$EQpeerAvg    = isset($peersAvg->EQ) ? round($peersAvg->EQ,1) : 0;
+	$EQdirectAvg  = isset($directsAvg->EQ) ? round($directsAvg->EQ,1) : 3;
+	$EQotherAvg  = isset($othersAvg->EQ) ? round($othersAvg->EQ,1) : 0;
+	$EQTotalAvg  = round( ($EQmanagerAvg+$EQpeerAvg+$EQdirectAvg+$EQotherAvg)/4,1);
 
-	$SAmanagerAvg = isset($managersAvg->SA) ? $managersAvg->SA : 0;
-	$SApeerAvg    = isset($peersAvg->SA) ? $peersAvg->SA : 0;
-	$SAdirectAvg  = isset($directsAvg->SA) ? $directsAvg->SA : 3;
-	$SAotherAvg  = isset($othersAvg->SA) ? $othersAvg->SA : 0;
-	$SATotalAvg  = ($SAmanagerAvg+$SApeerAvg+$SAdirectAvg+$SAotherAvg)/4;
+	$SAmanagerAvg = isset($managersAvg->SA) ? round($managersAvg->SA,1) : 0;
+	$SApeerAvg    = isset($peersAvg->SA) ? round($peersAvg->SA,1) : 0;
+	$SAdirectAvg  = isset($directsAvg->SA) ? round($directsAvg->SA,1) : 3;
+	$SAotherAvg  = isset($othersAvg->SA) ? round($othersAvg->SA,1) : 0;
+	$SATotalAvg  = round(($SAmanagerAvg+$SApeerAvg+$SAdirectAvg+$SAotherAvg)/4,1);
 
-	$SRmanagerAvg = isset($managersAvg->SR) ? $managersAvg->SR : 0;
-	$SRpeerAvg    = isset($peersAvg->SR) ? $peersAvg->SR : 0;
-	$SRdirectAvg  = isset($directsAvg->SR) ? $directsAvg->SR : 3;
-	$SRotherAvg  = isset($othersAvg->SR) ? $othersAvg->SR : 0;
-	$SRTotalAvg  = ($SRmanagerAvg+$SRpeerAvg+$SRdirectAvg+$SRotherAvg)/4;
+	$SRmanagerAvg = isset($managersAvg->SR) ? round($managersAvg->SR,1) : 0;
+	$SRpeerAvg    = isset($peersAvg->SR) ? round($peersAvg->SR,1) : 0;
+	$SRdirectAvg  = isset($directsAvg->SR) ? round($directsAvg->SR,1) : 3;
+	$SRotherAvg  = isset($othersAvg->SR) ? round($othersAvg->SR,1) : 0;
+	$SRTotalAvg  = round( ($SRmanagerAvg+$SRpeerAvg+$SRdirectAvg+$SRotherAvg)/4,1);
 
-	$IRmanagerAvg = isset($managersAvg->IR) ? $managersAvg->IR : 0;
-	$IRpeerAvg    = isset($peersAvg->IR) ? $peersAvg->IR : 0;
-	$IRdirectAvg  = isset($directsAvg->IR) ? $directsAvg->IR : 3;
-	$IRotherAvg  = isset($othersAvg->IR) ? $othersAvg->IR : 0;
-	$IRTotalAvg  = ($IRmanagerAvg+$IRpeerAvg+$IRdirectAvg+$IRotherAvg)/4;
+	$IRmanagerAvg = isset($managersAvg->IR) ? round( $managersAvg->IR,1) : 0;
+	$IRpeerAvg    = isset($peersAvg->IR) ? round( $peersAvg->IR,1) : 0;
+	$IRdirectAvg  = isset($directsAvg->IR) ? round( $directsAvg->IR,1) : 3;
+	$IRotherAvg  = isset($othersAvg->IR) ? round( $othersAvg->IR,1) : 0;
+	$IRTotalAvg  = round( ($IRmanagerAvg+$IRpeerAvg+$IRdirectAvg+$IRotherAvg)/4,1);
 
-	$EMmanagerAvg = isset($managersAvg->EM) ? $managersAvg->EM : 0;
-	$EMpeerAvg    = isset($peersAvg->EM) ? $peersAvg->EM : 0;
-	$EMdirectAvg  = isset($directsAvg->EM) ? $directsAvg->EM : 3;
-	$EMotherAvg  = isset($othersAvg->EM) ? $othersAvg->EM : 0;
-	$EMTotalAvg  = ($EMmanagerAvg+$EMpeerAvg+$EMdirectAvg+$EMotherAvg)/4;
+	$EMmanagerAvg = isset($managersAvg->EM) ? round( $managersAvg->EM,1) : 0;
+	$EMpeerAvg    = isset($peersAvg->EM) ? round( $peersAvg->EM,1) : 0;
+	$EMdirectAvg  = isset($directsAvg->EM) ? round( $directsAvg->EM,1) : 3;
+	$EMotherAvg  = isset($othersAvg->EM) ? round( $othersAvg->EM,1) : 0;
+	$EMTotalAvg  = round( ($EMmanagerAvg+$EMpeerAvg+$EMdirectAvg+$EMotherAvg)/4,1);
 
-	$MOmanagerAvg = isset($managersAvg->MO) ? $managersAvg->MO : 0;
-	$MOpeerAvg    = isset($peersAvg->MO) ? $peersAvg->MO : 0;
-	$MOdirectAvg  = isset($directsAvg->MO) ? $directsAvg->MO : 3;
-	$MOotherAvg  = isset($othersAvg->MO) ? $othersAvg->MO : 0;
-	$MOTotalAvg  = ($MOmanagerAvg+$MOpeerAvg+$MOdirectAvg+$MOotherAvg)/4;
+	$MOmanagerAvg = isset($managersAvg->MO) ? round( $managersAvg->MO,1) : 0;
+	$MOpeerAvg    = isset($peersAvg->MO) ? round( $peersAvg->MO,1) : 0;
+	$MOdirectAvg  = isset($directsAvg->MO) ? round( $directsAvg->MO,1) : 3;
+	$MOotherAvg  = isset($othersAvg->MO) ? round( $othersAvg->MO,1) : 0;
+	$MOTotalAvg  = round( ($MOmanagerAvg+$MOpeerAvg+$MOdirectAvg+$MOotherAvg)/4,1);
 	
 	
 	/* Page 16 */
-	$LQmanagerAvg = isset($managersAvg->LQ) ? $managersAvg->LQ : 0;
-	$LQpeerAvg    = isset($peersAvg->LQ) ? $peersAvg->LQ : 0;
-	$LQdirectAvg  = isset($directsAvg->LQ) ? $directsAvg->LQ : 3;
-	$LQotherAvg  = isset($othersAvg->LQ) ? $othersAvg->LQ : 0;
-	$LQTotalAvg  = ($LQmanagerAvg+$LQpeerAvg+$LQdirectAvg+$LQotherAvg)/4;
+	$LQmanagerAvg = isset($managersAvg->LQ) ? round( $managersAvg->LQ,1) : 0;
+	$LQpeerAvg    = isset($peersAvg->LQ) ? round( $peersAvg->LQ,1) : 0;
+	$LQdirectAvg  = isset($directsAvg->LQ) ? round( $directsAvg->LQ,1) : 3;
+	$LQotherAvg  = isset($othersAvg->LQ) ? round( $othersAvg->LQ,1) : 0;
+	$LQTotalAvg  = round( ($LQmanagerAvg+$LQpeerAvg+$LQdirectAvg+$LQotherAvg)/4,1);
 
-	$EMBmanagerAvg = isset($managersAvg->EMB) ? $managersAvg->EMB : 0;
-	$EMBpeerAvg    = isset($peersAvg->EMB) ? $peersAvg->EMB : 0;
-	$EMBdirectAvg  = isset($directsAvg->EMB) ? $directsAvg->EMB : 3;
-	$EMBotherAvg  = isset($othersAvg->EMB) ? $othersAvg->EMB : 0;
-	$EMBTotalAvg  = ($EMBmanagerAvg+$EMBpeerAvg+$EMBdirectAvg+$EMBotherAvg)/4;
+	$EMBmanagerAvg = isset($managersAvg->EMB) ? round( $managersAvg->EMB,1) : 0;
+	$EMBpeerAvg    = isset($peersAvg->EMB) ? round( $peersAvg->EMB,1) : 0;
+	$EMBdirectAvg  = isset($directsAvg->EMB) ? round( $directsAvg->EMB,1) : 3;
+	$EMBotherAvg  = isset($othersAvg->EMB) ? round( $othersAvg->EMB,1) : 0;
+	$EMBTotalAvg  = round( ($EMBmanagerAvg+$EMBpeerAvg+$EMBdirectAvg+$EMBotherAvg)/4,1);
 
-	$INPmanagerAvg = isset($managersAvg->INP) ? $managersAvg->INP : 0;
-	$INPpeerAvg    = isset($peersAvg->INP) ? $peersAvg->INP : 0;
-	$INPdirectAvg  = isset($directsAvg->INP) ? $directsAvg->INP : 3;
-	$INPotherAvg  = isset($othersAvg->INP) ? $othersAvg->INP : 0;
-	$INPTotalAvg  = ($INPmanagerAvg+$INPpeerAvg+$INPdirectAvg+$INPotherAvg)/4;
+	$INPmanagerAvg = isset($managersAvg->INP) ? round( $managersAvg->INP,1) : 0;
+	$INPpeerAvg    = isset($peersAvg->INP) ? round( $peersAvg->INP,1) : 0;
+	$INPdirectAvg  = isset($directsAvg->INP) ? round( $directsAvg->INP,1) : 3;
+	$INPotherAvg  = isset($othersAvg->INP) ? round( $othersAvg->INP,1) : 0;
+	$INPTotalAvg  = round( ($INPmanagerAvg+$INPpeerAvg+$INPdirectAvg+$INPotherAvg)/4,1);
 
-	$EXCmanagerAvg = isset($managersAvg->EXC) ? $managersAvg->EXC : 0;
-	$EXCpeerAvg    = isset($peersAvg->EXC) ? $peersAvg->EXC : 0;
-	$EXCdirectAvg  = isset($directsAvg->EXC) ? $directsAvg->EXC : 3;
-	$EXCotherAvg  = isset($othersAvg->EXC) ? $othersAvg->EXC : 0;
-	$EXCTotalAvg  = ($EXCmanagerAvg+$EXCpeerAvg+$EXCdirectAvg+$EXCotherAvg)/4;
+	$EXCmanagerAvg = isset($managersAvg->EXC) ? round( $managersAvg->EXC,1) : 0;
+	$EXCpeerAvg    = isset($peersAvg->EXC) ? round( $peersAvg->EXC,1) : 0;
+	$EXCdirectAvg  = isset($directsAvg->EXC) ? round( $directsAvg->EXC,1) : 3;
+	$EXCotherAvg  = isset($othersAvg->EXC) ? round( $othersAvg->EXC,1) : 0;
+	$EXCTotalAvg  = round( ($EXCmanagerAvg+$EXCpeerAvg+$EXCdirectAvg+$EXCotherAvg)/4,1);
 
-	$EMPmanagerAvg = isset($managersAvg->EMP) ? $managersAvg->EMP : 0;
-	$EMPpeerAvg    = isset($peersAvg->EMP) ? $peersAvg->EMP : 0;
-	$EMPdirectAvg  = isset($directsAvg->EMP) ? $directsAvg->EMP : 3;
-	$EMPotherAvg  = isset($othersAvg->EMP) ? $othersAvg->EMP : 0;
-	$EMPTotalAvg  = ($EMPmanagerAvg+$EMPpeerAvg+$EMPdirectAvg+$EMPotherAvg)/4;
+	$EMPmanagerAvg = isset($managersAvg->EMP) ? round( $managersAvg->EMP,1) : 0;
+	$EMPpeerAvg    = isset($peersAvg->EMP) ? round( $peersAvg->EMP,1) : 0;
+	$EMPdirectAvg  = isset($directsAvg->EMP) ? round( $directsAvg->EMP,1) : 3;
+	$EMPotherAvg  = isset($othersAvg->EMP) ? round( $othersAvg->EMP,1) : 0;
+	$EMPTotalAvg  = round( ($EMPmanagerAvg+$EMPpeerAvg+$EMPdirectAvg+$EMPotherAvg)/4,1);
 
-	$ROmanagerAvg = isset($managersAvg->RO) ? $managersAvg->RO : 0;
-	$ROpeerAvg    = isset($peersAvg->RO) ? $peersAvg->RO : 0;
-	$ROdirectAvg  = isset($directsAvg->RO) ? $directsAvg->RO : 3;
-	$ROotherAvg  = isset($othersAvg->RO) ? $othersAvg->RO : 0;
-	$ROTotalAvg  = ($ROmanagerAvg+$ROpeerAvg+$ROdirectAvg+$ROotherAvg)/4;
+	$ROmanagerAvg = isset($managersAvg->RO) ?round(  $managersAvg->RO,1) : 0;
+	$ROpeerAvg    = isset($peersAvg->RO) ? round( $peersAvg->RO,1) : 0;
+	$ROdirectAvg  = isset($directsAvg->RO) ? round( $directsAvg->RO,1) : 3;
+	$ROotherAvg  = isset($othersAvg->RO) ? round( $othersAvg->RO,1) : 0;
+	$ROTotalAvg  = round( ($ROmanagerAvg+$ROpeerAvg+$ROdirectAvg+$ROotherAvg)/4,1);
+	
+	/*Page 17*/
+	$BTmanagerAvg = isset($managersAvg->BT) ? round($managersAvg->BT,1) : 0;
+	$BTpeerAvg    = isset($peersAvg->BT) ? round($peersAvg->BT,1) : 0;
+	$BTdirectAvg  = isset($directsAvg->BT) ? round($directsAvg->BT,1) : 3;
+	$BTotherAvg  = isset($othersAvg->BT) ? round($othersAvg->BT,1) : 0;
+	$BTTotalAvg  = round( ($BTmanagerAvg+$BTpeerAvg+$BTdirectAvg+$BTotherAvg)/4,1);
 @endphp
 <style>
 	.no-list-style>li {
@@ -257,7 +305,7 @@
     					</div>
     				</li>
     				<li class="nav-item dropdown">
-    					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Spider</a>
+    					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Radar</a>
     					<div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; transform: translate3d(-64px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
     						<a href="#basic-tab8" class="dropdown-item" data-toggle="tab">8. Self</a>
     						<a href="#basic-tab9" class="dropdown-item" data-toggle="tab">9. 360</a>
@@ -265,7 +313,7 @@
     					</div>
     				</li>
     				<li class="nav-item dropdown">
-    					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Spider</a>
+    					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Gap</a>
     					<div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; transform: translate3d(-64px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
     						<a href="#basic-tab11" class="dropdown-item" data-toggle="tab">11. Quadrant Gap Analysis</a>
     						<a href="#basic-tab12" class="dropdown-item" data-toggle="tab">12. Linear Gap Analysis</a>
@@ -300,6 +348,9 @@
     					<div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; transform: translate3d(-64px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
     						<a href="#basic-tab21" class="dropdown-item" data-toggle="tab">21. PQ-i Action Plan </a>
     					</div>
+    				</li>
+    				<li>
+    					<a href="{{ route('users.report', [request()->token,'pdf']) }}" class="btn btn-sm btn-primary" target="_blank">View Pdf</a>
     				</li>
 				</ul>
 			</div>
@@ -458,6 +509,49 @@
 		var p4_high_range_beg = "{{ $high_range_beg }}";
 		var p4_high_range_end = "{{ $high_range_end }}";
 		
+		
+		// Page 11 Start
+		    var self_quad_cq  = "{{ $self_quad_cq }}";
+        	var self_quad_ft  = "{{ $self_quad_ft }}";
+        	var self_quad_ps  = "{{ $self_quad_ps }}";
+        	var self_quad_ct  = "{{ $self_quad_ct }}";
+        	var self_quad_dm  = "{{ $self_quad_dm }}"; 
+        	var self_quad_ex  = "{{ $self_quad_ex }}";
+        	var self_quad_eq  = "{{ $self_quad_eq }}";
+        	var self_quad_sa  = "{{ $self_quad_sa }}";
+        	var self_quad_sr  = "{{ $self_quad_sr }}";
+        	var self_quad_ir  = "{{ $self_quad_ir }}";
+        	var self_quad_em  = "{{ $self_quad_em }}";
+        	var self_quad_mo  = "{{ $self_quad_mo }}";
+        	var self_quad_lq  = "{{ $self_quad_lq }}";
+        	var self_quad_emb = "{{ $self_quad_emb }}";
+        	var self_quad_ins = "{{ $self_quad_ins }}";
+        	var self_quad_exc = "{{ $self_quad_exc }}";
+        	var self_quad_emp = "{{ $self_quad_emp }}";
+        	var self_quad_re  = "{{ $self_quad_re }}";
+        	var self_quad_bt  = "{{ $self_quad_bt }}";
+        	
+        	var quad_360_cq  = "{{ $quad_360_cq  }}";
+        	var quad_360_ft  = "{{ $quad_360_ft  }}";
+        	var quad_360_ps  = "{{ $quad_360_ps  }}";
+        	var quad_360_ct  = "{{ $quad_360_ct  }}";
+        	var quad_360_dm  = "{{ $quad_360_dm  }}";
+        	var quad_360_ex  = "{{ $quad_360_ex  }}";
+        	var quad_360_eq  = "{{ $quad_360_eq  }}";
+        	var quad_360_sa  = "{{ $quad_360_sa  }}";
+        	var quad_360_sr  = "{{ $quad_360_sr  }}";
+        	var quad_360_ir  = "{{ $quad_360_ir  }}";
+        	var quad_360_em  = "{{ $quad_360_em  }}";
+        	var quad_360_mo  = "{{ $quad_360_mo  }}";
+        	var quad_360_lq  = "{{ $quad_360_lq  }}";
+        	var quad_360_emb = "{{ $quad_360_emb }}";
+        	var quad_360_ins = "{{ $quad_360_ins }}";
+        	var quad_360_exc = "{{ $quad_360_exc }}";
+        	var quad_360_emp = "{{ $quad_360_emp }}";
+        	var quad_360_re  = "{{ $quad_360_re  }}";
+        	var quad_360_bt  = "{{ $quad_360_bt  }}";
+		// page 11 End
+		
 		var	cqmanagerAvg = "{{ $cqmanagerAvg }}";
 	    var cqpeerAvg = "{{ $cqpeerAvg }}";
 	    var cqdirectAvg = "{{ $cqdirectAvg }}";
@@ -495,6 +589,38 @@
 	    var EXotherAvg = "{{ $EXotherAvg }}";
 	    var EXTotalAvg = "{{ $EXTotalAvg }}";
 	    
+	    // Page 12
+	    var managerAvgPQ = "{{ isset($managersAvg->PQ) ? $managersAvg->PQ : 0 }}";
+	    var peersAvgPQ   = "{{ isset($peersAvg->PQ) ? $peersAvg->PQ : 0  }}";
+	    var directsAvgPQ   = "{{ isset($directsAvg->PQ) ? $directsAvg->PQ : 0  }}";
+	    var othersAvgPQ   = "{{ isset($othersAvg->PQ) ? $othersAvg->PQ : 0  }}";
+	    
+	    var selfCQ = "{{ isset($selfSummary->CQ) ? $selfSummary->CQ : 0  }}";
+	    var selfEQ = "{{ isset($selfSummary->EQ) ? $selfSummary->EQ : 0  }}";
+	    var selfLQ = "{{ isset($selfSummary->LQ) ? $selfSummary->LQ : 0  }}";
+	    
+	    var managerAvgCQ = "{{ isset($managersAvg->CQ) ? $managersAvg->CQ : 0 }}";
+	    var managerAvgEQ = "{{ isset($managersAvg->EQ) ? $managersAvg->EQ : 0 }}";
+	    var managerAvgLQ = "{{ isset($managersAvg->LQ) ? $managersAvg->LQ : 0 }}";
+	    
+	    var peersAvgCQ   = "{{ isset($peersAvg->CQ) ? $peersAvg->CQ : 0  }}";
+	    var peersAvgEQ   = "{{ isset($peersAvg->EQ) ? $peersAvg->EQ : 0  }}";
+	    var peersAvgLQ   = "{{ isset($peersAvg->LQ) ? $peersAvg->LQ : 0  }}";
+	    
+	    var directsAvgCQ   = "{{ isset($directsAvg->CQ) ? $directsAvg->CQ : 0  }}";
+	    var directsAvgEQ   = "{{ isset($directsAvg->EQ) ? $directsAvg->EQ : 0  }}";
+	    var directsAvgLQ   = "{{ isset($directsAvg->LQ) ? $directsAvg->LQ : 0  }}";
+	    
+	    var othersAvgCQ    = "{{ isset($othersAvg->CQ) ? $othersAvg->CQ : 0  }}";
+	    var othersAvgEQ    = "{{ isset($othersAvg->EQ) ? $othersAvg->EQ : 0  }}";
+	    var othersAvgLQ    = "{{ isset($othersAvg->LQ) ? $othersAvg->LQ : 0  }}";
+	    
+	    var seflBT = "{{ isset($selfSummary->BT) ? $selfSummary->BT : 0  }}";
+	    var managerAvgBT = "{{ isset($managersAvg->BT) ? $managersAvg->BT : 0 }}";
+	    var peersAvgBT = "{{ isset($peersAvg->BT) ? $peersAvg->BT : 0 }}";
+	    var directsAvgBT = "{{ isset($directsAvg->BT) ? $directsAvg->BT : 0 }}";
+	    var othersAvgBT = "{{ isset($othersAvg->BT) ? $othersAvg->BT : 0 }}";
+ 	    
 	    //Page 15
 	    var EQmanagerAvg = "{{ $EQmanagerAvg }}";
 	    var EQpeerAvg = "{{ $EQpeerAvg }}";
@@ -582,4 +708,9 @@
 	<script src="{{ asset('js/demo_pages/charts/page-15.js') }}"></script>
 	<script src="{{ asset('js/demo_pages/charts/page-16.js') }}"></script>
 	<script src="{{ asset('js/demo_pages/charts/page-17.js') }}"></script>
+	<script src="{{ asset('js/demo_pages/charts/page-18.js') }}"></script>
+    <script src="{{ asset('assets/js/html2canvas.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
+    <script src="{{ asset('assets/js/pdf.js') }}"></script>
+
 @endsection

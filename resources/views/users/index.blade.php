@@ -45,6 +45,7 @@
 										<th>Email</th>
 										<th>Lock</th>
 										<th>Role</th>
+										<th>Report 360</th>
 										<th>Actions</th>
 									</tr>
 								</thead>
@@ -59,6 +60,7 @@
 											<td>{{ $user->email }}</td>
 											<td>{{ $user->lock }}</td>
 											<td>{{ ucFirst($user->user_type) }}</td>
+											<td><a href="{{ route('users.report', $user->token_id) }}" class="btn btn-sm btn-primary">Report 360</a></td>
 											<td>
 												<div class="list-icons">
 							                		<a href="#" class="list-icons-item edit"

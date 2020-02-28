@@ -9,7 +9,7 @@ class UserRepository
 {
 	public function fetchUsers()
 	{
-		return $users = User::where('user_type','!=','super-admin')->where('id','!=', auth()->user()->id)->get();
+		return $users = User::where('user_type','!=','super-admin')->where('token_id','!=',null)->where('id','!=', auth()->user()->id)->get();
 	}
 
 	public function getUser($id)
